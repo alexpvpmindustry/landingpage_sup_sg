@@ -231,7 +231,7 @@
             color: #2c2323;
             padding: 5px;
             border-radius: 3px;
-            font-size: 14px; 
+            font-size: 14px;
             z-index: 1;
             /* max-width: 200px; */
             text-align: center;
@@ -239,13 +239,6 @@
     </style>
 
     <script>
-        let health = 4;
-
-        function updateHealth(increase = false) {
-            const healthContainer = document.getElementById('health-container');
-            healthContainer.innerHTML = `Health: <span class="health ${increase ? 'increase' : 'decrease'}">${health}</span>`;
-        }
-
 
         function createStars() {
             const starContainer = document.createElement('div');
@@ -281,6 +274,14 @@
             createStars();
             updateHealth();
         };
+
+        let health = 4;
+
+        function updateHealth(increase = false) {
+            const healthContainer = document.getElementById('health-container');
+            healthContainer.innerHTML = `Health: <span class="health ${increase ? 'increase' : 'decrease'}">${health}</span>`;
+        }
+
         function goToPage(pageId) {
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
