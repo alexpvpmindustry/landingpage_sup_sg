@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure on Serpulo</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+        overflow: hidden;
+        position: relative;
+    }
+    h1 {
+        text-align: center;
+    }
+    .container {
+        max-width: 600px;
+        text-align: center;
+        background-color: rgba(51, 51, 51, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        position: relative;
+        z-index: 1;
+    }
+    .page {
+        display: none;
+    }
+    .page.active {
+        display: block;
+    }
+    .button {
+        display: inline-block;
+        margin: 10px;
+        padding: 15px 30px;
+        color: #fff;
+        background-color: #5271ff;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .button:hover {
+        background-color: #415bbf;
+    }
+    @media (max-width: 600px) {
+        .button {
+            padding: 10px 20px;
+            font-size: 14px;
+        }
+    }
+    .stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: 0;
+    }
+    .star {
+        position: absolute;
+        background-color: white;
+        border-radius: 50%;
+        opacity: 0.8;
+        animation: moveStar linear infinite;
+    }
+    @keyframes moveStar {
+        from {
+            transform: translate(0, 0);
+        }
+        to {
+            transform: translate(var(--x), var(--y));
+        }
+    }
+</style>
+
+<script>
+    function createStars() {
+        const starContainer = document.createElement('div');
+        starContainer.className = 'stars';
+        document.body.appendChild(starContainer);
+
+        for (let i = 0; i < 300; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 3 + 1;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.left = '50%';
+            star.style.top = '50%';
+
+            const duration = Math.random() * 10 + 5;
+            star.style.animationDuration = `${duration}s`;
+
+            const x = (Math.random() - 0.5) * window.innerWidth * 2;
+            const y = (Math.random() - 0.5) * window.innerHeight * 2;
+            star.style.setProperty('--x', `${x}px`);
+            star.style.setProperty('--y', `${y}px`);
+
+            // Start each star at a random point in the animation
+            const delay = Math.random() * duration;
+            star.style.animationDelay = `-${delay}s`;
+
+            starContainer.appendChild(star);
+        }
+    }
+
+    window.onload = createStars;
+</script>
+
+
+
+</head>
+<body>
+    <div class="container">
+        <h1>Adventure on Serpulo</h1>
+        <div id="page1" class="page active">
+            <p>You are an astronaut who has crash-landed on a strange new planet called Serpulo. Your spaceship is damaged, and you need to find resources to repair it. As you step out, you see two paths ahead.</p>
+            <button class="button" onclick="goToPage('page2')">Take the left path</button>
+            <button class="button" onclick="goToPage('page3')">Take the right path</button>
+        </div>
+        <div id="page2" class="page">
+            <p>You take the left path and encounter a Scorcher, a fiery creature known for its aggression.</p>
+            <button class="button" onclick="goToPage('page4')">Fight the Scorcher</button>
+            <button class="button" onclick="goToPage('page5')">Run away</button>
+        </div>
+        <div id="page3" class="page">
+            <p>You take the right path and find a resource-rich area guarded by a Crawler, a small but dangerous creature.</p>
+            <button class="button" onclick="goToPage('page6')">Gather resources</button>
+            <button class="button" onclick="goToPage('page7')">Sneak past the Crawler</button>
+        </div>
+        <div id="page4" class="page">
+            <p>You bravely fight the Scorcher and manage to defeat it. You find valuable components for your spaceship.</p>
+            <button class="button" onclick="goToPage('page1')">Return to the spaceship</button>
+        </div>
+        <div id="page5" class="page">
+            <p>You run away from the Scorcher and return to your spaceship empty-handed.</p>
+            <button class="button" onclick="goToPage('page1')">Try again</button>
+        </div>
+        <div id="page6" class="page">
+            <p>You gather resources while avoiding the Crawler. You find essential materials for your spaceship.</p>
+            <button class="button" onclick="goToPage('page1')">Return to the spaceship</button>
+        </div>
+        <div id="page7" class="page">
+            <p>As you try to sneak past the Crawler, it spots you and attacks. You manage to escape but without any resources.</p>
+            <button class="button" onclick="goToPage('page1')">Try again</button>
+        </div>
+    </div>
+    <script>
+        function goToPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.getElementById(pageId).classList.add('active');
+        }
+    </script>
+    <div class="stars"></div>
+</body>
+</html>
