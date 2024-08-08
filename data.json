@@ -1,0 +1,284 @@
+[
+    {
+        "pageId": "page0",
+        "text": "You are an astronaut who has crash-landed on a strange new planet called Serpulo. Your spaceship is damaged, and you need to find resources to repair it. As you step out, you see two paths ahead.",
+        "choices": [
+            {
+                "buttonText": "Take the left path",
+                "nextPageId": "page1",
+                "healthChange": -1
+            },
+            {
+                "buttonText": "Take the right path",
+                "nextPageId": "page2",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page1",
+        "text": "You take the left path and encounter a Scorcher, a fiery creature known for its aggression.",
+        "choices": [
+            {
+                "buttonText": "Fight the Scorcher",
+                "nextPageId": "page3",
+                "healthChange": 3
+            },
+            {
+                "buttonText": "Run away",
+                "nextPageId": "page4",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page2",
+        "text": "You take the right path and find a resource-rich area guarded by a Crawler, a small but dangerous creature.",
+        "choices": [
+            {
+                "buttonText": "Gather resources",
+                "nextPageId": "page5",
+                "healthChange": 3
+            },
+            {
+                "buttonText": "Sneak past the Crawler",
+                "nextPageId": "page6",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page3",
+        "text": "You bravely fight the Scorcher and manage to defeat it. You find valuable components for your spaceship.",
+        "choices": [
+            {
+                "buttonText": "Return to the spaceship",
+                "nextPageId": "page7",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page4",
+        "text": "You run away from the Scorcher and return to your spaceship empty-handed.",
+        "choices": [
+            {
+                "buttonText": "Try again",
+                "nextPageId": "page0",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page5",
+        "text": "You gather resources while avoiding the Crawler. You find essential materials for your spaceship.",
+        "choices": [
+            {
+                "buttonText": "Return to the spaceship",
+                "nextPageId": "page7",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page6",
+        "text": "As you try to sneak past the Crawler, it spots you and attacks. You manage to escape but without any resources.",
+        "choices": [
+            {
+                "buttonText": "Back to spaceship",
+                "nextPageId": "page7",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page7",
+        "text": "You are back at your spaceship. As you step out, you see two paths ahead.",
+        "choices": [
+            {
+                "buttonText": "Take the left path",
+                "nextPageId": "page1",
+                "healthChange": -1
+            },
+            {
+                "buttonText": "Take the right path",
+                "nextPageId": "page2",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page8",
+        "text": "You discover an ancient Serpulo artifact. It seems to radiate energy.",
+        "choices": [
+            {
+                "buttonText": "Examine the artifact closely",
+                "nextPageId": "page9",
+                "healthChange": 4
+            },
+            {
+                "buttonText": "Leave it alone",
+                "nextPageId": "page10",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page9",
+        "text": "The artifact infuses you with ancient energy, restoring your health!",
+        "choices": [
+            {
+                "buttonText": "Return to the spaceship",
+                "nextPageId": "page7",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page10",
+        "text": "You wisely decide not to tamper with unknown technology.",
+        "choices": [
+            {
+                "buttonText": "Explore a nearby cave",
+                "nextPageId": "page11",
+                "healthChange": -1
+            },
+            {
+                "buttonText": "Head back to open terrain",
+                "nextPageId": "page12",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page11",
+        "text": "In the cave, you find a pool of glowing liquid. It looks rejuvenating.",
+        "choices": [
+            {
+                "buttonText": "Drink from the pool",
+                "nextPageId": "page13",
+                "healthChange": 5
+            },
+            {
+                "buttonText": "Collect a sample and leave",
+                "nextPageId": "page14",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page12",
+        "text": "You encounter a friendly alien creature. It offers you a strange fruit.",
+        "choices": [
+            {
+                "buttonText": "Accept the fruit",
+                "nextPageId": "page15",
+                "healthChange": 3
+            },
+            {
+                "buttonText": "Politely decline",
+                "nextPageId": "page16",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page13",
+        "text": "The liquid revitalizes you completely! You feel stronger than ever, gaining 5 health points!",
+        "choices": [
+            {
+                "buttonText": "Return to the spaceship",
+                "nextPageId": "page7",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page14",
+        "text": "While collecting the sample, you slip and hurt yourself slightly.",
+        "choices": [
+            {
+                "buttonText": "Return to the spaceship",
+                "nextPageId": "page7",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page15",
+        "text": "The fruit tastes amazing and gives you a slight health boost.",
+        "choices": [
+            {
+                "buttonText": "Thank the creature and leave",
+                "nextPageId": "page7",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page16",
+        "text": "The creature seems disappointed but gives you a useful map of the area.",
+        "choices": [
+            {
+                "buttonText": "Use the map to find resources",
+                "nextPageId": "page17",
+                "healthChange": 4
+            }
+        ]
+    },
+    {
+        "pageId": "page17",
+        "text": "The map leads you to a cache of valuable resources and a health kit!",
+        "choices": [
+            {
+                "buttonText": "Return to the spaceship with your findings",
+                "nextPageId": "page7",
+                "healthChange": -1
+            }
+        ]
+    },
+    {
+        "pageId": "page18",
+        "text": "You encounter a trap.",
+        "choices": [
+            {
+                "buttonText": "Dead End",
+                "nextPageId": "page_gameover",
+                "healthChange": -100
+            }
+        ]
+    },
+    {
+        "pageId": "page19",
+        "text": "Gain more resources.",
+        "choices": [
+            {
+                "buttonText": "Return to the spaceship",
+                "nextPageId": "page7",
+                "healthChange": 5
+            }
+        ]
+    },
+    {
+        "pageId": "page_gameover",
+        "text": "You have no more health. Game over.",
+        "choices": [
+            {
+                "buttonText": "Try again",
+                "nextPageId": "page0",
+                "healthChange": 0
+            }
+        ]
+    },
+    {
+        "pageId": "page_win",
+        "text": "Congratulations! You've gathered enough resources and health to repair your spaceship and leave Serpulo. You win!",
+        "choices": [
+            {
+                "buttonText": "Play Again",
+                "nextPageId": "page0",
+                "healthChange": 0
+            }
+        ]
+    }
+]

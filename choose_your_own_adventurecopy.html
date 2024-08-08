@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure on Serpulo</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7D0WEMF23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-P7D0WEMF23');
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes shine {
+            from {
+                text-shadow: 0 0 5px #00ff00;
+            }
+
+            to {
+                text-shadow: 0 0 20px #00ff00;
+            }
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            text-align: center;
+            background-color: rgba(51, 51, 51, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            color: #fff;
+            background-color: #5271ff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .button:hover {
+            background-color: #9b9b9b;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 20%, transparent 70%);
+            transform: translate(-100%, -100%) scale(0.1);
+        }
+
+        .button:hover::before {
+            transform: translate(-100%, -100%) scale(1);
+        }
+
+        .button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+            transform: skewX(-30deg);
+            transition: left 0.5s ease;
+        }
+
+        .button:hover::after {
+            left: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: moveStar linear infinite;
+        }
+
+        @keyframes moveStar {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(var(--x), var(--y));
+            }
+        }
+
+        #health-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .health {
+            display: inline-block;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .health.increase {
+            animation: healthIncrease 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .health.decrease {
+            animation: healthDecrease 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        @keyframes healthIncrease {
+            0% {
+                transform: scale(1);
+                color: #fff;
+            }
+
+            50% {
+                transform: scale(2.5);
+                color: #00ff00;
+            }
+
+            100% {
+                transform: scale(1);
+                color: #fff;
+            }
+        }
+
+        @keyframes healthDecrease {
+            0% {
+                transform: scale(1);
+                color: #fff;
+            }
+
+            50% {
+                transform: scale(0.7);
+                color: #ff0000;
+            }
+
+            100% {
+                transform: scale(1);
+                color: #fff;
+            }
+        }
+
+        .info-icon {
+            font-size: 0.6em;
+            vertical-align: super;
+            cursor: help;
+            position: relative;
+            top: -5px;
+            right: -5px;
+        }
+
+        .info-icon:hover::after {
+            content: attr(data-info);
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #ff6c6c;
+            color: #2c2323;
+            padding: 5px;
+            border-radius: 3px;
+            font-size: 14px;
+            z-index: 1;
+            /* max-width: 200px; */
+            text-align: center;
+        }
+    </style>
+
+    <script>
+
+        function createStars() {
+            const starContainer = document.createElement('div');
+            starContainer.className = 'stars';
+            document.body.appendChild(starContainer);
+
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.left = '50%';
+                star.style.top = '50%';
+
+                const duration = Math.random() * 5 + 50 / size;
+                star.style.animationDuration = `${duration}s`;
+
+                const x = (Math.random() - 0.5) * window.innerWidth * 6;
+                const y = (Math.random() - 0.5) * window.innerHeight * 6;
+                star.style.setProperty('--x', `${x}px`);
+                star.style.setProperty('--y', `${y}px`);
+
+                const delay = Math.random() * duration;
+                star.style.animationDelay = `-${delay}s`;
+
+                starContainer.appendChild(star);
+            }
+        }
+
+        window.onload = () => {
+
+            createStars();
+            updateHealth();
+        };
+
+        let health = 4;
+
+        function updateHealth(increase = false) {
+            const healthContainer = document.getElementById('health-container');
+            healthContainer.innerHTML = `Health: <span class="health ${increase ? 'increase' : 'decrease'}">${health}</span>`;
+        }
+
+        function goToPage(pageId) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+
+            if (pageId == "page_start") {
+                health = 4;
+                updateHealth(true);
+                document.getElementById(pageId).classList.add('active');
+                return;
+            }
+
+            switch (pageId) {
+                case 'page4':
+                case 'page6':
+                case 'page15':
+                    health += 3;
+                    break;
+                case 'page9':
+                case 'page17':
+                    health += 4;
+                    break;
+                case 'page13':
+                    health += 5;
+                    break;
+                case 'page14':
+                    // No health change
+                    break;
+                default:
+                    health--;
+            }
+
+            updateHealth(health > 4);
+
+            if (health >= 10) {
+                document.getElementById("page_win").classList.add('active');
+                return;
+            }
+
+            if (health < 1) {
+                document.getElementById("page_gameover").classList.add('active');
+                return;
+            }
+            document.getElementById(pageId).classList.add('active');
+        }
+
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Adventure on Serpulo
+            <span class="info-icon" data-info="Each step will cost 1 health.
+                10 health to win.
+                Reaching 0 health will restart game.">ⓘ</span>
+        </h1>
+        <div id="page_start" class="page active">
+            <p>You are an astronaut who has crash-landed on a strange new planet called Serpulo. Your spaceship is
+                damaged, and you need to find resources to repair it. As you step out, you see two paths ahead.</p>
+            <button class="button" onclick="goToPage('page2')">Take the left path</button>
+            <button class="button" onclick="goToPage('page3')">Take the right path</button>
+        </div>
+        <div id="page1" class="page">
+            <p>You are back at your spaceship. As you step out, you see two paths ahead.</p>
+            <button class="button" onclick="goToPage('page2')">Take the left path</button>
+            <button class="button" onclick="goToPage('page3')">Take the right path</button>
+        </div>
+        <div id="page2" class="page">
+            <p>You take the left path and encounter a Scorcher, a fiery creature known for its aggression.</p>
+            <button class="button" onclick="goToPage('page4')">Fight the Scorcher</button>
+            <button class="button" onclick="goToPage('page5')">Run away</button>
+        </div>
+        <div id="page3" class="page">
+            <p>You take the right path and find a resource-rich area guarded by a Crawler, a small but dangerous
+                creature.</p>
+            <button class="button" onclick="goToPage('page6')">Gather resources</button>
+            <button class="button" onclick="goToPage('page7')">Sneak past the Crawler</button>
+        </div>
+        <div id="page4" class="page">
+            <p>You bravely fight the Scorcher and manage to defeat it. You find valuable components for your spaceship.
+            </p>
+            <button class="button" onclick="goToPage('page1')">Return to the spaceship</button>
+        </div>
+        <div id="page5" class="page">
+            <p>You run away from the Scorcher and run to a nearby bush.</p>
+            <button class="button" onclick="goToPage('page8')">Run</button>
+        </div>
+        <div id="page6" class="page">
+            <p>You gather resources while avoiding the Crawler. You find essential materials for your spaceship.</p>
+            <button class="button" onclick="goToPage('page1')">Return to the spaceship</button>
+        </div>
+        <div id="page7" class="page">
+            <p>As you try to sneak past the Crawler, it spots you and attacks. You manage to escape but without any
+                resources.</p>
+            <button class="button" onclick="goToPage('page8')">Back to spaceship</button>
+        </div>
+        <div id="page8" class="page">
+            <p>You discover an ancient Serpulo artifact. It seems to radiate energy.</p>
+            <button class="button" onclick="goToPage('page9')">Examine the artifact closely</button>
+            <button class="button" onclick="goToPage('page10')">Leave it alone</button>
+        </div>
+
+        <div id="page9" class="page">
+            <p>The artifact infuses you with ancient energy, restoring your health!</p>
+            <button class="button" onclick="goToPage('page1')">Return to the spaceship</button>
+        </div>
+
+        <div id="page10" class="page">
+            <p>You wisely decide not to tamper with unknown technology.</p>
+            <button class="button" onclick="goToPage('page11')">Explore a nearby cave</button>
+            <button class="button" onclick="goToPage('page12')">Head back to open terrain</button>
+        </div>
+
+        <div id="page11" class="page">
+            <p>In the cave, you find a pool of glowing liquid. It looks rejuvenating.</p>
+            <button class="button" onclick="goToPage('page13')">Drink from the pool</button>
+            <button class="button" onclick="goToPage('page14')">Collect a sample and leave</button>
+        </div>
+
+        <div id="page12" class="page">
+            <p>You encounter a friendly alien creature. It offers you a strange fruit.</p>
+            <button class="button" onclick="goToPage('page15')">Accept the fruit</button>
+            <button class="button" onclick="goToPage('page16')">Politely decline</button>
+        </div>
+
+        <div id="page13" class="page">
+            <p>The liquid revitalizes you completely! You feel stronger than ever, gaining 5 health points!</p>
+            <button class="button" onclick="goToPage('page1')">Return to the spaceship</button>
+        </div>
+
+        <div id="page14" class="page">
+            <p>While collecting the sample, you slip and hurt yourself slightly.</p>
+            <button class="button" onclick="goToPage('page1')">Return to the spaceship</button>
+        </div>
+
+        <div id="page15" class="page">
+            <p>The fruit tastes amazing and gives you a slight health boost.</p>
+            <button class="button" onclick="goToPage('page1')">Thank the creature and leave</button>
+        </div>
+
+        <div id="page16" class="page">
+            <p>The creature seems disappointed but gives you a useful map of the area.</p>
+            <button class="button" onclick="goToPage('page17')">Use the map to find resources</button>
+        </div>
+
+        <div id="page17" class="page">
+            <p>The map leads you to a cache of valuable resources and a health kit!</p>
+            <button class="button" onclick="goToPage('page1')">Return to the spaceship with your findings</button>
+        </div>
+
+        <div id="page_gameover" class="page">
+            <p>You have no more health. Gameover.</p>
+            <button class="button" onclick="goToPage('page_start')">Try again</button>
+        </div>
+        <div id="page_win" class="page">
+            <p
+                style="font-weight: bold; color: #00ff00; text-shadow: 0 0 10px #00ff00; animation: shine 0.5s ease-in-out infinite alternate;">
+                Congratulations! You've gathered enough resources and health to repair your spaceship and leave Serpulo.
+                You win!</p>
+            <p>Are you sure you want to play again?</p>
+            <button class="button"
+                onclick="if(confirm('Are you sure you want to start over?')) goToPage('page_start')">Play Again</button>
+        </div>
+    </div>
+    <div id="health-container"></div>
+    <div class="stars"></div>
+</body>
+
+</html>
