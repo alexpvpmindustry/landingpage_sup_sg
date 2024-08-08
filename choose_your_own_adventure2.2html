@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure on Serpulo</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7D0WEMF23"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-P7D0WEMF23');
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes shine {
+            from {
+                text-shadow: 0 0 5px #00ff00;
+            }
+
+            to {
+                text-shadow: 0 0 20px #00ff00;
+            }
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            text-align: center;
+            background-color: rgba(51, 51, 51, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 15px 30px;
+            color: #fff;
+            background-color: #5271ff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .button:hover {
+            background-color: #9b9b9b;
+        }
+
+        .button::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.5) 20%, transparent 70%);
+            transform: translate(-100%, -100%) scale(0.1);
+        }
+
+        .button:hover::before {
+            transform: translate(-100%, -100%) scale(1);
+        }
+
+        .button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
+            transform: skewX(-30deg);
+            transition: left 0.5s ease;
+        }
+
+        .button:hover::after {
+            left: 100%;
+        }
+
+        @media (max-width: 600px) {
+            .button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: moveStar linear infinite;
+        }
+
+        @keyframes moveStar {
+            from {
+                transform: translate(0, 0);
+            }
+
+            to {
+                transform: translate(var(--x), var(--y));
+            }
+        }
+
+        #health-container {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        .health {
+            display: inline-block;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .health.increase {
+            animation: healthIncrease 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        .health.decrease {
+            animation: healthDecrease 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+
+        @keyframes healthIncrease {
+            0% {
+                transform: scale(1);
+                color: #fff;
+            }
+
+            50% {
+                transform: scale(2.5);
+                color: #00ff00;
+            }
+
+            100% {
+                transform: scale(1);
+                color: #fff;
+            }
+        }
+
+        @keyframes healthDecrease {
+            0% {
+                transform: scale(1);
+                color: #fff;
+            }
+
+            50% {
+                transform: scale(0.7);
+                color: #ff0000;
+            }
+
+            100% {
+                transform: scale(1);
+                color: #fff;
+            }
+        }
+
+        .info-icon {
+            font-size: 0.6em;
+            vertical-align: super;
+            cursor: help;
+            position: relative;
+            top: -5px;
+            right: -5px;
+        }
+
+        .info-icon:hover::after {
+            content: attr(data-info);
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: #ff6c6c;
+            color: #2c2323;
+            padding: 5px;
+            border-radius: 3px;
+            font-size: 14px;
+            z-index: 1;
+            /* max-width: 200px; */
+            text-align: center;
+
+            #loading {
+                display: inline-block;
+                width: 50px;
+                height: 50px;
+                border: 3px solid rgba(255, 255, 255, .3);
+                border-radius: 50%;
+                border-top-color: #fff;
+                animation: spin 1s ease-in-out infinite;
+                -webkit-animation: spin 1s ease-in-out infinite;
+            }
+
+            @keyframes spin {
+                to {
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+
+            @-webkit-keyframes spin {
+                to {
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+        }
+    </style>
+
+    <script>
+
+        function createStars() {
+            const starContainer = document.createElement('div');
+            starContainer.className = 'stars';
+            document.body.appendChild(starContainer);
+
+            for (let i = 0; i < 150; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                const size = Math.random() * 3 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                star.style.left = '50%';
+                star.style.top = '50%';
+
+                const duration = Math.random() * 5 + 50 / size;
+                star.style.animationDuration = `${duration}s`;
+
+                const x = (Math.random() - 0.5) * window.innerWidth * 6;
+                const y = (Math.random() - 0.5) * window.innerHeight * 6;
+                star.style.setProperty('--x', `${x}px`);
+                star.style.setProperty('--y', `${y}px`);
+
+                const delay = Math.random() * duration;
+                star.style.animationDelay = `-${delay}s`;
+
+                starContainer.appendChild(star);
+            }
+        }
+
+        window.onload = () => {
+
+            createStars();
+            updateHealth();
+        };
+
+        let health = 4;
+
+        const gameData = [
+            {
+                "pageId": "page0",
+                "text": "You are an astronaut who has crash-landed on a strange new planet called Serpulo. Your spaceship is damaged, and you need to find resources to repair it. As you step out, you see two paths ahead.",
+                "choices": [
+                    {
+                        "buttonText": "Take the left path",
+                        "nextPageId": "page1",
+                        "healthChange": -1
+                    },
+                    {
+                        "buttonText": "Take the right path",
+                        "nextPageId": "page2",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page1",
+                "text": "You take the left path and encounter a Scorcher, a fiery creature known for its aggression.",
+                "choices": [
+                    {
+                        "buttonText": "Fight the Scorcher",
+                        "nextPageId": "page3",
+                        "healthChange": 3
+                    },
+                    {
+                        "buttonText": "Run away",
+                        "nextPageId": "page4",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page2",
+                "text": "You take the right path and find a resource-rich area guarded by a Crawler, a small but dangerous creature.",
+                "choices": [
+                    {
+                        "buttonText": "Gather resources",
+                        "nextPageId": "page5",
+                        "healthChange": 3
+                    },
+                    {
+                        "buttonText": "Sneak past the Crawler",
+                        "nextPageId": "page6",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page3",
+                "text": "You bravely fight the Scorcher and manage to defeat it. You find valuable components for your spaceship.",
+                "choices": [
+                    {
+                        "buttonText": "Return to the spaceship",
+                        "nextPageId": "page7",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page4",
+                "text": "You run away from the Scorcher and return to your spaceship empty-handed.",
+                "choices": [
+                    {
+                        "buttonText": "Try again",
+                        "nextPageId": "page0",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page5",
+                "text": "You gather resources while avoiding the Crawler. You find essential materials for your spaceship.",
+                "choices": [
+                    {
+                        "buttonText": "Return to the spaceship",
+                        "nextPageId": "page7",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page6",
+                "text": "As you try to sneak past the Crawler, it spots you and attacks. You manage to escape but without any resources.",
+                "choices": [
+                    {
+                        "buttonText": "Back to spaceship",
+                        "nextPageId": "page7",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page7",
+                "text": "You are back at your spaceship. As you step out, you see two paths ahead.",
+                "choices": [
+                    {
+                        "buttonText": "Take the left path",
+                        "nextPageId": "page1",
+                        "healthChange": -1
+                    },
+                    {
+                        "buttonText": "Take the right path",
+                        "nextPageId": "page2",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page8",
+                "text": "You discover an ancient Serpulo artifact. It seems to radiate energy.",
+                "choices": [
+                    {
+                        "buttonText": "Examine the artifact closely",
+                        "nextPageId": "page9",
+                        "healthChange": 4
+                    },
+                    {
+                        "buttonText": "Leave it alone",
+                        "nextPageId": "page10",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page9",
+                "text": "The artifact infuses you with ancient energy, restoring your health!",
+                "choices": [
+                    {
+                        "buttonText": "Return to the spaceship",
+                        "nextPageId": "page7",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page10",
+                "text": "You wisely decide not to tamper with unknown technology.",
+                "choices": [
+                    {
+                        "buttonText": "Explore a nearby cave",
+                        "nextPageId": "page11",
+                        "healthChange": -1
+                    },
+                    {
+                        "buttonText": "Head back to open terrain",
+                        "nextPageId": "page12",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page11",
+                "text": "In the cave, you find a pool of glowing liquid. It looks rejuvenating.",
+                "choices": [
+                    {
+                        "buttonText": "Drink from the pool",
+                        "nextPageId": "page13",
+                        "healthChange": 5
+                    },
+                    {
+                        "buttonText": "Collect a sample and leave",
+                        "nextPageId": "page14",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page12",
+                "text": "You encounter a friendly alien creature. It offers you a strange fruit.",
+                "choices": [
+                    {
+                        "buttonText": "Accept the fruit",
+                        "nextPageId": "page15",
+                        "healthChange": 3
+                    },
+                    {
+                        "buttonText": "Politely decline",
+                        "nextPageId": "page16",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page13",
+                "text": "The liquid revitalizes you completely! You feel stronger than ever, gaining 5 health points!",
+                "choices": [
+                    {
+                        "buttonText": "Return to the spaceship",
+                        "nextPageId": "page7",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page14",
+                "text": "While collecting the sample, you slip and hurt yourself slightly.",
+                "choices": [
+                    {
+                        "buttonText": "Return to the spaceship",
+                        "nextPageId": "page7",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page15",
+                "text": "The fruit tastes amazing and gives you a slight health boost.",
+                "choices": [
+                    {
+                        "buttonText": "Thank the creature and leave",
+                        "nextPageId": "page7",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page16",
+                "text": "The creature seems disappointed but gives you a useful map of the area.",
+                "choices": [
+                    {
+                        "buttonText": "Use the map to find resources",
+                        "nextPageId": "page17",
+                        "healthChange": 4
+                    }
+                ]
+            },
+            {
+                "pageId": "page17",
+                "text": "The map leads you to a cache of valuable resources and a health kit!",
+                "choices": [
+                    {
+                        "buttonText": "Return to the spaceship with your findings",
+                        "nextPageId": "page7",
+                        "healthChange": -1
+                    }
+                ]
+            },
+            {
+                "pageId": "page18",
+                "text": "You encounter a trap.",
+                "choices": [
+                    {
+                        "buttonText": "Dead End",
+                        "nextPageId": "page_gameover",
+                        "healthChange": -100
+                    }
+                ]
+            },
+            {
+                "pageId": "page19",
+                "text": "Gain more resources.",
+                "choices": [
+                    {
+                        "buttonText": "Return to the spaceship",
+                        "nextPageId": "page7",
+                        "healthChange": 5
+                    }
+                ]
+            },
+            {
+                "pageId": "page_gameover",
+                "text": "You have no more health. Game over.",
+                "choices": [
+                    {
+                        "buttonText": "Try again",
+                        "nextPageId": "page0",
+                        "healthChange": 0
+                    }
+                ]
+            },
+            {
+                "pageId": "page_win",
+                "text": "Congratulations! You've gathered enough resources and health to repair your spaceship and leave Serpulo. You win!",
+                "choices": [
+                    {
+                        "buttonText": "Play Again",
+                        "nextPageId": "page0",
+                        "healthChange": 0
+                    }
+                ]
+            }
+        ];
+
+        function createPages() {
+            const pagesContainer = document.getElementById('pages');
+            gameData.forEach(page => {
+                const pageDiv = document.createElement('div');
+                pageDiv.id = page.pageId;
+                pageDiv.className = 'page';
+                if (page.pageId === 'page0') pageDiv.classList.add('active');
+                pageDiv.innerHTML = `<p>${page.text}</p>`;
+                page.choices.forEach(choice => {
+                    const button = document.createElement('button');
+                    button.className = 'button';
+                    button.innerText = choice.buttonText;
+                    button.onclick = () => goToPage(choice.nextPageId, choice.healthChange);
+                    pageDiv.appendChild(button);
+                });
+                pagesContainer.appendChild(pageDiv);
+            });
+
+        }
+
+        function updateHealth(increase = false) {
+            const healthContainer = document.getElementById('health-container');
+            healthContainer.innerHTML = `Health: <span class="health ${increase ? 'increase' : 'decrease'}">${health}</span>`;
+        }
+
+        function goToPage(pageId, healthChange) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            if (health < 1) {
+                document.getElementById('page_start').classList.add('active');
+                updateHealth(healthChange > 0);
+                health = 4;
+                return;
+            }
+            health += healthChange;
+            updateHealth(healthChange > 0);
+
+            if (health >= 10) {
+                document.getElementById('page_win').classList.add('active');
+                return;
+            }
+
+            if (health < 1) {
+                document.getElementById('page_gameover').classList.add('active');
+                return;
+            }
+
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        window.onload = () => {
+            createPages();
+            updateHealth();
+            // document.getElementById('loading-spinner').style.display = 'none';
+            document.getElementById('loading').style.display = 'none';
+        }; 
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Adventure on Serpulo
+            <span class="info-icon" data-info="Each step will cost 1 health.
+                10 health to win.
+                Reaching 0 health will restart game.">ⓘ</span>
+        </h1>
+
+        <div id="pages"></div>
+        <div id="loading">Loading</div>
+        <div id="health-container"></div>
+    </div>
+
+    <div class="stars"></div>
+</body>
+
+</html>

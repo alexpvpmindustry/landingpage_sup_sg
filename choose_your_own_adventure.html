@@ -235,29 +235,6 @@
             z-index: 1;
             /* max-width: 200px; */
             text-align: center;
-
-            #loading {
-                display: inline-block;
-                width: 50px;
-                height: 50px;
-                border: 3px solid rgba(255, 255, 255, .3);
-                border-radius: 50%;
-                border-top-color: #fff;
-                animation: spin 1s ease-in-out infinite;
-                -webkit-animation: spin 1s ease-in-out infinite;
-            }
-
-            @keyframes spin {
-                to {
-                    -webkit-transform: rotate(360deg);
-                }
-            }
-
-            @-webkit-keyframes spin {
-                to {
-                    -webkit-transform: rotate(360deg);
-                }
-            }
         }
     </style>
 
@@ -300,348 +277,57 @@
 
         let health = 4;
 
-        const gameData = [
-            {
-                "pageId": "page0",
-                "text": "You are an astronaut who has crash-landed on a strange new planet called Serpulo. Your spaceship is damaged, and you need to find resources to repair it. As you step out, you see two paths ahead.",
-                "choices": [
-                    {
-                        "buttonText": "Take the left path",
-                        "nextPageId": "page1",
-                        "healthChange": -1
-                    },
-                    {
-                        "buttonText": "Take the right path",
-                        "nextPageId": "page2",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page1",
-                "text": "You take the left path and encounter a Scorcher, a fiery creature known for its aggression.",
-                "choices": [
-                    {
-                        "buttonText": "Fight the Scorcher",
-                        "nextPageId": "page3",
-                        "healthChange": 3
-                    },
-                    {
-                        "buttonText": "Run away",
-                        "nextPageId": "page4",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page2",
-                "text": "You take the right path and find a resource-rich area guarded by a Crawler, a small but dangerous creature.",
-                "choices": [
-                    {
-                        "buttonText": "Gather resources",
-                        "nextPageId": "page5",
-                        "healthChange": 3
-                    },
-                    {
-                        "buttonText": "Sneak past the Crawler",
-                        "nextPageId": "page6",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page3",
-                "text": "You bravely fight the Scorcher and manage to defeat it. You find valuable components for your spaceship.",
-                "choices": [
-                    {
-                        "buttonText": "Return to the spaceship",
-                        "nextPageId": "page7",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page4",
-                "text": "You run away from the Scorcher and return to your spaceship empty-handed.",
-                "choices": [
-                    {
-                        "buttonText": "Try again",
-                        "nextPageId": "page0",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page5",
-                "text": "You gather resources while avoiding the Crawler. You find essential materials for your spaceship.",
-                "choices": [
-                    {
-                        "buttonText": "Return to the spaceship",
-                        "nextPageId": "page7",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page6",
-                "text": "As you try to sneak past the Crawler, it spots you and attacks. You manage to escape but without any resources.",
-                "choices": [
-                    {
-                        "buttonText": "Back to spaceship",
-                        "nextPageId": "page7",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page7",
-                "text": "You are back at your spaceship. As you step out, you see two paths ahead.",
-                "choices": [
-                    {
-                        "buttonText": "Take the left path",
-                        "nextPageId": "page1",
-                        "healthChange": -1
-                    },
-                    {
-                        "buttonText": "Take the right path",
-                        "nextPageId": "page2",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page8",
-                "text": "You discover an ancient Serpulo artifact. It seems to radiate energy.",
-                "choices": [
-                    {
-                        "buttonText": "Examine the artifact closely",
-                        "nextPageId": "page9",
-                        "healthChange": 4
-                    },
-                    {
-                        "buttonText": "Leave it alone",
-                        "nextPageId": "page10",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page9",
-                "text": "The artifact infuses you with ancient energy, restoring your health!",
-                "choices": [
-                    {
-                        "buttonText": "Return to the spaceship",
-                        "nextPageId": "page7",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page10",
-                "text": "You wisely decide not to tamper with unknown technology.",
-                "choices": [
-                    {
-                        "buttonText": "Explore a nearby cave",
-                        "nextPageId": "page11",
-                        "healthChange": -1
-                    },
-                    {
-                        "buttonText": "Head back to open terrain",
-                        "nextPageId": "page12",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page11",
-                "text": "In the cave, you find a pool of glowing liquid. It looks rejuvenating.",
-                "choices": [
-                    {
-                        "buttonText": "Drink from the pool",
-                        "nextPageId": "page13",
-                        "healthChange": 5
-                    },
-                    {
-                        "buttonText": "Collect a sample and leave",
-                        "nextPageId": "page14",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page12",
-                "text": "You encounter a friendly alien creature. It offers you a strange fruit.",
-                "choices": [
-                    {
-                        "buttonText": "Accept the fruit",
-                        "nextPageId": "page15",
-                        "healthChange": 3
-                    },
-                    {
-                        "buttonText": "Politely decline",
-                        "nextPageId": "page16",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page13",
-                "text": "The liquid revitalizes you completely! You feel stronger than ever, gaining 5 health points!",
-                "choices": [
-                    {
-                        "buttonText": "Return to the spaceship",
-                        "nextPageId": "page7",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page14",
-                "text": "While collecting the sample, you slip and hurt yourself slightly.",
-                "choices": [
-                    {
-                        "buttonText": "Return to the spaceship",
-                        "nextPageId": "page7",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page15",
-                "text": "The fruit tastes amazing and gives you a slight health boost.",
-                "choices": [
-                    {
-                        "buttonText": "Thank the creature and leave",
-                        "nextPageId": "page7",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page16",
-                "text": "The creature seems disappointed but gives you a useful map of the area.",
-                "choices": [
-                    {
-                        "buttonText": "Use the map to find resources",
-                        "nextPageId": "page17",
-                        "healthChange": 4
-                    }
-                ]
-            },
-            {
-                "pageId": "page17",
-                "text": "The map leads you to a cache of valuable resources and a health kit!",
-                "choices": [
-                    {
-                        "buttonText": "Return to the spaceship with your findings",
-                        "nextPageId": "page7",
-                        "healthChange": -1
-                    }
-                ]
-            },
-            {
-                "pageId": "page18",
-                "text": "You encounter a trap.",
-                "choices": [
-                    {
-                        "buttonText": "Dead End",
-                        "nextPageId": "page_gameover",
-                        "healthChange": -100
-                    }
-                ]
-            },
-            {
-                "pageId": "page19",
-                "text": "Gain more resources.",
-                "choices": [
-                    {
-                        "buttonText": "Return to the spaceship",
-                        "nextPageId": "page7",
-                        "healthChange": 5
-                    }
-                ]
-            },
-            {
-                "pageId": "page_gameover",
-                "text": "You have no more health. Game over.",
-                "choices": [
-                    {
-                        "buttonText": "Try again",
-                        "nextPageId": "page0",
-                        "healthChange": 0
-                    }
-                ]
-            },
-            {
-                "pageId": "page_win",
-                "text": "Congratulations! You've gathered enough resources and health to repair your spaceship and leave Serpulo. You win!",
-                "choices": [
-                    {
-                        "buttonText": "Play Again",
-                        "nextPageId": "page0",
-                        "healthChange": 0
-                    }
-                ]
-            }
-        ];
-
-        function createPages() {
-            const pagesContainer = document.getElementById('pages');
-            gameData.forEach(page => {
-                const pageDiv = document.createElement('div');
-                pageDiv.id = page.pageId;
-                pageDiv.className = 'page';
-                if (page.pageId === 'page0') pageDiv.classList.add('active');
-                pageDiv.innerHTML = `<p>${page.text}</p>`;
-                page.choices.forEach(choice => {
-                    const button = document.createElement('button');
-                    button.className = 'button';
-                    button.innerText = choice.buttonText;
-                    button.onclick = () => goToPage(choice.nextPageId, choice.healthChange);
-                    pageDiv.appendChild(button);
-                });
-                pagesContainer.appendChild(pageDiv);
-            });
-
-        }
-
         function updateHealth(increase = false) {
             const healthContainer = document.getElementById('health-container');
             healthContainer.innerHTML = `Health: <span class="health ${increase ? 'increase' : 'decrease'}">${health}</span>`;
         }
 
-        function goToPage(pageId, healthChange) {
+        function goToPage(pageId) {
             document.querySelectorAll('.page').forEach(page => {
                 page.classList.remove('active');
             });
-            if (health < 1) {
-                document.getElementById('page_start').classList.add('active');
-                updateHealth(healthChange > 0);
+
+            if (pageId == "page_start") {
                 health = 4;
+                updateHealth(true);
+                document.getElementById(pageId).classList.add('active');
                 return;
             }
-            health += healthChange;
-            updateHealth(healthChange > 0);
+
+            switch (pageId) {
+                case 'page4':
+                case 'page6':
+                case 'page15':
+                    health += 3;
+                    break;
+                case 'page9':
+                case 'page17':
+                    health += 4;
+                    break;
+                case 'page13':
+                    health += 5;
+                    break;
+                case 'page14':
+                    // No health change
+                    break;
+                default:
+                    health--;
+            }
+
+            updateHealth(health > 4);
 
             if (health >= 10) {
-                document.getElementById('page_win').classList.add('active');
+                document.getElementById("page_win").classList.add('active');
                 return;
             }
 
             if (health < 1) {
-                document.getElementById('page_gameover').classList.add('active');
+                document.getElementById("page_gameover").classList.add('active');
                 return;
             }
-
             document.getElementById(pageId).classList.add('active');
         }
 
-        window.onload = () => {
-            createPages();
-            updateHealth();
-            // document.getElementById('loading-spinner').style.display = 'none';
-            document.getElementById('loading').style.display = 'none';
-        }; 
     </script>
 </head>
 
@@ -652,12 +338,115 @@
                 10 health to win.
                 Reaching 0 health will restart game.">ⓘ</span>
         </h1>
+        <div id="page_start" class="page active">
+            <p>You are an astronaut who has crash-landed on a strange new planet called Serpulo. Your spaceship is
+                damaged, and you need to find resources to repair it. As you step out, you see two paths ahead.</p>
+            <button class="button" onclick="goToPage('page2')">Take the left path</button>
+            <button class="button" onclick="goToPage('page3')">Take the right path</button>
+        </div>
+        <div id="page1" class="page">
+            <p>You are back at your spaceship. As you step out, you see two paths ahead.</p>
+            <button class="button" onclick="goToPage('page2')">Take the left path</button>
+            <button class="button" onclick="goToPage('page3')">Take the right path</button>
+        </div>
+        <div id="page2" class="page">
+            <p>You take the left path and encounter a Scorcher, a fiery creature known for its aggression.</p>
+            <button class="button" onclick="goToPage('page4')">Fight the Scorcher</button>
+            <button class="button" onclick="goToPage('page5')">Run away</button>
+        </div>
+        <div id="page3" class="page">
+            <p>You take the right path and find a resource-rich area guarded by a Crawler, a small but dangerous
+                creature.</p>
+            <button class="button" onclick="goToPage('page6')">Gather resources</button>
+            <button class="button" onclick="goToPage('page7')">Sneak past the Crawler</button>
+        </div>
+        <div id="page4" class="page">
+            <p>You bravely fight the Scorcher and manage to defeat it. You find valuable components for your spaceship.
+            </p>
+            <button class="button" onclick="goToPage('page1')">Return to the spaceship</button>
+        </div>
+        <div id="page5" class="page">
+            <p>You run away from the Scorcher and run to a nearby bush.</p>
+            <button class="button" onclick="goToPage('page8')">Run</button>
+        </div>
+        <div id="page6" class="page">
+            <p>You gather resources while avoiding the Crawler. You find essential materials for your spaceship.</p>
+            <button class="button" onclick="goToPage('page1')">Return to the spaceship</button>
+        </div>
+        <div id="page7" class="page">
+            <p>As you try to sneak past the Crawler, it spots you and attacks. You manage to escape but without any
+                resources.</p>
+            <button class="button" onclick="goToPage('page8')">Back to spaceship</button>
+        </div>
+        <div id="page8" class="page">
+            <p>You discover an ancient Serpulo artifact. It seems to radiate energy.</p>
+            <button class="button" onclick="goToPage('page9')">Examine the artifact closely</button>
+            <button class="button" onclick="goToPage('page10')">Leave it alone</button>
+        </div>
 
-        <div id="pages"></div>
-        <div id="loading">Loading</div>
-        <div id="health-container"></div>
+        <div id="page9" class="page">
+            <p>The artifact infuses you with ancient energy, restoring your health!</p>
+            <button class="button" onclick="goToPage('page1')">Return to the spaceship</button>
+        </div>
+
+        <div id="page10" class="page">
+            <p>You wisely decide not to tamper with unknown technology.</p>
+            <button class="button" onclick="goToPage('page11')">Explore a nearby cave</button>
+            <button class="button" onclick="goToPage('page12')">Head back to open terrain</button>
+        </div>
+
+        <div id="page11" class="page">
+            <p>In the cave, you find a pool of glowing liquid. It looks rejuvenating.</p>
+            <button class="button" onclick="goToPage('page13')">Drink from the pool</button>
+            <button class="button" onclick="goToPage('page14')">Collect a sample and leave</button>
+        </div>
+
+        <div id="page12" class="page">
+            <p>You encounter a friendly alien creature. It offers you a strange fruit.</p>
+            <button class="button" onclick="goToPage('page15')">Accept the fruit</button>
+            <button class="button" onclick="goToPage('page16')">Politely decline</button>
+        </div>
+
+        <div id="page13" class="page">
+            <p>The liquid revitalizes you completely! You feel stronger than ever, gaining 5 health points!</p>
+            <button class="button" onclick="goToPage('page1')">Return to the spaceship</button>
+        </div>
+
+        <div id="page14" class="page">
+            <p>While collecting the sample, you slip and hurt yourself slightly.</p>
+            <button class="button" onclick="goToPage('page1')">Return to the spaceship</button>
+        </div>
+
+        <div id="page15" class="page">
+            <p>The fruit tastes amazing and gives you a slight health boost.</p>
+            <button class="button" onclick="goToPage('page1')">Thank the creature and leave</button>
+        </div>
+
+        <div id="page16" class="page">
+            <p>The creature seems disappointed but gives you a useful map of the area.</p>
+            <button class="button" onclick="goToPage('page17')">Use the map to find resources</button>
+        </div>
+
+        <div id="page17" class="page">
+            <p>The map leads you to a cache of valuable resources and a health kit!</p>
+            <button class="button" onclick="goToPage('page1')">Return to the spaceship with your findings</button>
+        </div>
+
+        <div id="page_gameover" class="page">
+            <p>You have no more health. Gameover.</p>
+            <button class="button" onclick="goToPage('page_start')">Try again</button>
+        </div>
+        <div id="page_win" class="page">
+            <p
+                style="font-weight: bold; color: #00ff00; text-shadow: 0 0 10px #00ff00; animation: shine 0.5s ease-in-out infinite alternate;">
+                Congratulations! You've gathered enough resources and health to repair your spaceship and leave Serpulo.
+                You win!</p>
+            <p>Are you sure you want to play again?</p>
+            <button class="button"
+                onclick="if(confirm('Are you sure you want to start over?')) goToPage('page_start')">Play Again</button>
+        </div>
     </div>
-
+    <div id="health-container"></div>
     <div class="stars"></div>
 </body>
 
