@@ -1,0 +1,2413 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charSet="utf-8"/>
+        <meta name="viewport" content="width=device-width"/>
+        <title>Sourcegraph | Code Intelligence Platform</title>
+        <meta name="description" content="Sourcegraph’s code intelligence platform makes it easy for devs to write, fix, and maintain code with Cody, the AI coding assistant, and Code Search."/>
+        <meta name="twitter:title" content="Sourcegraph | Code Intelligence Platform"/>
+        <meta name="twitter:site" content="@sourcegraph"/>
+        <meta name="twitter:description" content="Sourcegraph’s code intelligence platform makes it easy for devs to write, fix, and maintain code with Cody, the AI coding assistant, and Code Search."/>
+        <meta name="twitter:creator" content="@sourcegraph"/>
+        <meta name="twitter:image" content="https://about.sourcegraph.com/sourcegraph-universal-og.png"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta property="og:image" content="https://about.sourcegraph.com/sourcegraph-universal-og.png"/>
+        <meta property="og:image:secure_url" content="https://about.sourcegraph.com/sourcegraph-universal-og.png"/>
+        <meta property="og:url" content="https://sourcegraph.com/"/>
+        <meta property="og:title" content="Sourcegraph | Code Intelligence Platform"/>
+        <meta property="og:description" content="Sourcegraph’s code intelligence platform makes it easy for devs to write, fix, and maintain code with Cody, the AI coding assistant, and Code Search."/>
+        <meta property="og:type" content="website"/>
+        <meta property="og:site_name" content="Sourcegraph"/>
+        <link rel="icon" type="image/png" href="https://sourcegraph.com/favicon.png"/>
+        <link rel="canonical" href="https://sourcegraph.com/"/>
+        <meta name="next-head-count" content="19"/>
+        <meta name="referrer" content="no-referrer-when-downgrade"/>
+        <meta charSet="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+        <meta name="theme-color" content="#ffffff"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="#ffffff"/>
+        <meta name="apple-mobile-web-app-title" content="Sourcegraph"/>
+        <link rel="apple-touch-startup-image" href="/sourcegraph/sourcegraph-mark.png"/>
+        <link rel="icon" type="image/png" href="/favicon.png"/>
+        <link rel="apple-touch-icon" sizes="180x180" href="/sourcegraph/sourcegraph-mark-touch-180.png"/>
+        <link rel="manifest" href="/manifest.json"/>
+        <link rel="alternate" type="application/rss+xml" href="/feed.rss.xml"/>
+        <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/dgjhfomjieaadpoljlnidmbgkdffpack"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous"/>
+        <link rel="stylesheet" data-href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;400;500;600;700;1,300;400;500;600;700&amp;display=swap"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+        <script id="structured_data" type="application/ld+json" data-nscript="beforeInteractive">
+            {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Sourcegraph",
+                "url": "https://sourcegraph.com"
+            }</script>
+        <script id="structured_data_company" type="application/ld+json" data-nscript="beforeInteractive">
+            {
+                "@context": "https://schema.org",
+                "@type": "Organization",
+                "image": "https://sourcegraph.com/sourcegraph-logo.svg",
+                "url": "https://www.sourcegraph.com",
+                "sameAs": [
+                    "https://github.com/sourcegraph",
+                    "https://twitter.com/sourcegraph",
+                    "https://www.youtube.com/c/Sourcegraph/featured",
+                    "https://www.linkedin.com/sourcegraph/",
+                    "https://discord.com/servers/sourcegraph-969688426372825169"
+                ],
+                "logo": "https://sourcegraph.com/sourcegraph-logo.svg",
+                "name": "Sourcegraph",
+                "description": "Sourcegraph's code intelligence platform makes it easy for devs to write, fix, and maintain code with Cody, the AI coding assistant, and Code Search"
+            }</script>
+        <link rel="preload" href="/_next/static/css/6255d6e16566e16a.css" as="style"/>
+        <link rel="stylesheet" href="/_next/static/css/6255d6e16566e16a.css" data-n-g=""/>
+        <noscript data-n-css=""></noscript>
+        <script defer="" nomodule="" src="/_next/static/chunks/polyfills-c67a75d1b6f99dc8.js"></script>
+        <script id="script-cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="fb31dc3e-afb3-4be8-ae84-7090bba7797d" data-blockingmode="auto" type="text/javascript" defer="" data-nscript="beforeInteractive"></script>
+        <script id="script-triblio-personalization" type="text/javascript" src="https://tribl.io/h.js?orgId=Yee6bMKj7QSARqAePdE8" async="" defer="" data-nscript="beforeInteractive"></script>
+        <script src="/_next/static/chunks/webpack-b0dacd20d0c49e4f.js" defer=""></script>
+        <script src="/_next/static/chunks/framework-970864a1d2e76c99.js" defer=""></script>
+        <script src="/_next/static/chunks/main-d2d2d19edbe79eaa.js" defer=""></script>
+        <script src="/_next/static/chunks/pages/_app-74923c3670ef32ca.js" defer=""></script>
+        <script src="/_next/static/chunks/pages/index-801ff31239eb1394.js" defer=""></script>
+        <script src="/_next/static/pM19cs1Ch8awf6CR1qCvX/_buildManifest.js" defer=""></script>
+        <script src="/_next/static/pM19cs1Ch8awf6CR1qCvX/_ssgManifest.js" defer=""></script>
+        <style data-href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuOKfMZs.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfMZs.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuI6fMZs.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuGKYMZs.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYMZs.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+1F00-1FFF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+1F00-1FFF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+1F00-1FFF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+1F00-1FFF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2JL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa0ZL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2ZL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+1F00-1FFF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1pL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa2pL7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa25L7W0Q5n-wU.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/inter/v18/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+        </style>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;400;500;600;700;1,300;400;500;600;700&display=swap"/>
+        <style data-href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono&display=swap">
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj62UUsg.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7oUUsg.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7aUUsg.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj42Vksg.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4PVksg.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Space Mono';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacemono/v13/i7dPIFZifjKcF5UAWdDRUEU.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPb54C_k3HqUtEw.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPb94C_k3HqUtEw.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqU.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPb54C_k3HqUtEw.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPb94C_k3HqUtEw.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqU.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPb54C_k3HqUtEw.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPb94C_k3HqUtEw.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 500;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqU.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPb54C_k3HqUtEw.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPb94C_k3HqUtEw.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqU.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPb54C_k3HqUtEw.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPb94C_k3HqUtEw.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Space Grotesk';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacegrotesk/v16/V8mDoQDjQSkFtoMM3T6r8E7mPbF4C_k3HqU.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+
+            @font-face {
+                font-family: 'Space Mono';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacemono/v13/i7dPIFZifjKcF5UAWdDRYE58RXi4EwSsbg.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Space Mono';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacemono/v13/i7dPIFZifjKcF5UAWdDRYE98RXi4EwSsbg.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Space Mono';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/spacemono/v13/i7dPIFZifjKcF5UAWdDRYEF8RXi4EwQ.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+        </style>
+        <style data-href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Source+Code+Pro&display=swap">
+            @font-face {
+                font-family: 'Source Code Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcecodepro/v23/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQhM0.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zAkw.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xK3dSBYKcSV-LCoeQqfX1RYOo3aPA.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rAkw.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vAkw.woff) format('woff')
+            }
+
+            @font-face {
+                font-family: 'Source Code Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcecodepro/v23/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQtMRrSlcZZJmOpwVS.woff) format('woff');
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
+            }
+
+            @font-face {
+                font-family: 'Source Code Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcecodepro/v23/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQtM1rSlcZZJmOpwVS.woff) format('woff');
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
+            }
+
+            @font-face {
+                font-family: 'Source Code Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcecodepro/v23/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQtMVrSlcZZJmOpwVS.woff) format('woff');
+                unicode-range: U+1F00-1FFF
+            }
+
+            @font-face {
+                font-family: 'Source Code Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcecodepro/v23/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQtMprSlcZZJmOpwVS.woff) format('woff');
+                unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF
+            }
+
+            @font-face {
+                font-family: 'Source Code Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcecodepro/v23/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQtMZrSlcZZJmOpwVS.woff) format('woff');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Source Code Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcecodepro/v23/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQtMdrSlcZZJmOpwVS.woff) format('woff');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Source Code Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcecodepro/v23/HI_diYsKILxRpg3hIP6sJ7fM7PqPMcMnZFqUwX28DMyQtMlrSlcZZJmOpw.woff) format('woff');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmhdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwkxdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmxdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+1F00-1FFF
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlBdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmBdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwmRdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 300;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ik4zwlxdu3cOWxw.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNa7lujVj9_mf.woff2) format('woff2');
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xK3dSBYKcSV-LCoeQqfX1RYOo3qPK7lujVj9_mf.woff2) format('woff2');
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNK7lujVj9_mf.woff2) format('woff2');
+                unicode-range: U+1F00-1FFF
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xK3dSBYKcSV-LCoeQqfX1RYOo3qO67lujVj9_mf.woff2) format('woff2');
+                unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xK3dSBYKcSV-LCoeQqfX1RYOo3qN67lujVj9_mf.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xK3dSBYKcSV-LCoeQqfX1RYOo3qNq7lujVj9_mf.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 400;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xK3dSBYKcSV-LCoeQqfX1RYOo3qOK7lujVj9w.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwmhdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwkxdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwmxdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+1F00-1FFF
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlBdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwmBdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwmRdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 600;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3i54rwlxdu3cOWxw.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmhdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwkxdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmxdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+1F00-1FFF
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlBdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmBdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwmRdu3cOWxy40.woff2) format('woff2');
+                unicode-range: U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF
+            }
+
+            @font-face {
+                font-family: 'Source Sans Pro';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url(https://fonts.gstatic.com/s/sourcesanspro/v22/6xKydSBYKcSV-LCoeQqfX1RYOo3ig4vwlxdu3cOWxw.woff2) format('woff2');
+                unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
+            }
+        </style>
+    </head>
+    <body>
+        <noscript>
+            <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TB4NLS7" style="display:none;visibility:hidden" height="0" width="0" title="GTM"></iframe>
+        </noscript>
+        <div id="__next">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+            <div class="flex min-h-screen flex-col relative w-full !overflow-hidden bg-gray-50">
+                <div class="pt-[147px] md:pt-[116px]">
+                    <nav class="fixed top-0 left-0 right-0 z-[1030]" data-headlessui-state="">
+                        <div class="transition bg-gray-50">
+                            <div class="mx-auto max-w-7xl px-2 md:px-6 xl:px-0">
+                                <div class="relative flex h-16 items-center justify-between">
+                                    <div class="flex flex-1 items-center md:items-stretch md:justify-start">
+                                        <div class="flex flex-shrink-0 items-center">
+                                            <a class="block rounded-md py-1 px-2 focus:outline-none focus:ring-2 md:-ml-2 focus:ring-black" href="/">
+                                                <img src="/sourcegraph-logo.svg" width="150" height="26" class="block" aria-label="Sourcegraph - Code Intelligence Platform" alt="Sourcegraph - Code Intelligence Platform"/>
+                                            </a>
+                                        </div>
+                                        <div class="hidden flex-1 items-center self-center md:ml-4 lg:block">
+                                            <div class="flex space-x-3">
+                                                <div>
+                                                    <div class="px-6 md:py-16 !px-0 text-black">
+                                                        <section class="mx-auto flex flex-col gap-4 pl-3 pb-1 lg:flex-row lg:pl-0 lg:pb-0 max-w-screen-xl">
+                                                            <div class="relative" data-headlessui-state="">
+                                                                <div>
+                                                                    <button class="flex items-center whitespace-nowrap rounded-2xl py-0 px-2 font-medium text-sm leading-normal tracking-normal focus:outline-none focus:ring-2 text-gray-500 hover:bg-violet-100 focus:ring-violet-300" id="topnav" type="button" aria-haspopup="menu" aria-expanded="false" data-headlessui-state="">
+                                                                        Products
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down ml-1 h-6 w-6 lg:h-3 lg:w-3">
+                                                                            <path d="m6 9 6 6 6-6"></path>
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="relative" data-headlessui-state="">
+                                                                <div>
+                                                                    <button class="flex items-center whitespace-nowrap rounded-2xl py-0 px-2 font-medium text-sm leading-normal tracking-normal focus:outline-none focus:ring-2 text-gray-500 hover:bg-violet-100 focus:ring-violet-300" id="topnav" type="button" aria-haspopup="menu" aria-expanded="false" data-headlessui-state="">
+                                                                        Solutions
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down ml-1 h-6 w-6 lg:h-3 lg:w-3">
+                                                                            <path d="m6 9 6 6 6-6"></path>
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <div class="relative" data-headlessui-state="">
+                                                                <div>
+                                                                    <button class="flex items-center whitespace-nowrap rounded-2xl py-0 px-2 font-medium text-sm leading-normal tracking-normal focus:outline-none focus:ring-2 text-gray-500 hover:bg-violet-100 focus:ring-violet-300" id="topnav" type="button" aria-haspopup="menu" aria-expanded="false" data-headlessui-state="">
+                                                                        Resources
+                                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down ml-1 h-6 w-6 lg:h-3 lg:w-3">
+                                                                            <path d="m6 9 6 6 6-6"></path>
+                                                                        </svg>
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                            <a id="topnav" class="flex items-center whitespace-nowrap rounded-2xl py-0 px-2 font-medium text-sm leading-normal tracking-normal focus:outline-none focus:ring-2 text-gray-500 hover:bg-violet-100 focus:ring-violet-300" href="https://docs.sourcegraph.com">Docs</a>
+                                                            <a id="topnav" class="flex items-center whitespace-nowrap rounded-2xl py-0 px-2 font-medium text-sm leading-normal tracking-normal focus:outline-none focus:ring-2 text-gray-500 hover:bg-violet-100 focus:ring-violet-300" href="/pricing">Pricing</a>
+                                                            <a id="topnav" class="flex items-center whitespace-nowrap rounded-2xl py-0 px-2 font-medium text-sm leading-normal tracking-normal focus:outline-none focus:ring-2 text-gray-500 hover:bg-violet-100 focus:ring-violet-300" href="https://sourcegraph.com/search">Search public code</a>
+                                                        </section>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="hidden pr-2 md:pr-0 lg:flex">
+                                            <span class="flex w-full flex-col items-center gap-4 lg:flex-row">
+                                                <a id="topnav" class="inline-flex items-center whitespace-nowrap order-2 lg:order-1 py-3  px-5 lg:btn-sm w-full flex justify-center !font-semibold !text-violet-700 btn-secondary" title="Contact" data-button-style="2" data-button-location="1" data-button-type="cta" href="/contact/request-info">Contact
+                                                <!-- -->
+                                                </a>
+                                                <a id="topnav" title="Get started with Cody" class="btn lg:btn-sm order-3 flex w-full justify-center py-3 px-5 lg:order-2 lg:!px-4 btn-secondary" type="button" href="https://sourcegraph.com/sign-in?returnTo=/cody/manage">Login</a>
+                                                <button id="topnav" type="button" class="btn lg:btn-sm order-1 w-full min-w-fit py-3 px-5 lg:order-3  btn-primary" title="Download Sourcegraph">Get Cody for free</button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="absolute inset-y-0 right-0 flex items-center lg:hidden">
+                                        <button class="inline-flex items-center justify-center rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-inset text-gray-500 hover:bg-violet-200 hover:text-black" id="headlessui-disclosure-button-:R9ikm:" type="button" aria-expanded="false" data-headlessui-state="">
+                                            <span class="sr-only">Open main menu</span>
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="block h-6 w-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                    <div>
+                        <div class="px-6 md:py-16 !py-0 !pb-16 !bg-gray-50 text-black">
+                            <section class="mx-auto relative mt-[-72px] flex items-center justify-center rounded-2xl bg-violet-700 md:mt-[-43px] max-w-screen-xl">
+                                <div class="mx-auto flex flex-col items-center justify-center px-3 text-center md:px-0">
+                                    <div class="mx-auto flex max-w-[456px] flex-col items-center pb-8 pt-8 sm:max-w-full md:w-[680px] md:pb-[26px] md:pt-10">
+                                        <h1 class="mb-8 mt-10 w-full text-center text-5xl text-gray-100 sm:text-6xl">Understand and write code blazingly fast</h1>
+                                        <p class="mb-10 text-2xl font-normal leading-[30px] -tracking-[0.25px] text-white opacity-60 md:mb-8">Sourcegraph allows developers to rapidly search, write, and understand code by bringing insights from their entire codebase right into the editor</p>
+                                        <button type="button" class="btn btn-primary-dark w-full max-w-[356px] px-5 sm:w-fit sm:px-6" title="free cody">Get Cody for free</button>
+                                    </div>
+                                    <div class="hidden aspect-video w-full overflow-hidden sm:block lg:w-[1062px]">
+                                        <video class="relative bottom-[-6px] rounded-t-xl shadow-md" autoplay="" muted="" loop="" playsinline="">
+                                            <source type="video/webm" src="/home/Header-Vid-Non-Rounded.webm"/>
+                                            <source type="video/mp4" src="/home/Header-Vid-Non-Rounded.mp4"/>
+                                            <source type="video/ogg" src="/home/Header-Vid-Non-Rounded.ogg"/>
+                                        </video>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <style>
+                    body {
+                        background-color: white;
+                    }
+                </style>
+                <section class="flex-1">
+                    <div class="oveflow-hidden relative w-full bg-gray-50">
+                        <div>
+                            <div class="px-6 md:py-16 !py-0 text-black">
+                                <section class="mx-auto flex items-center justify-center max-w-screen-xl">
+                                    <p class="mb-16 text-center text-[20px] font-[590] uppercase leading-[27px] text-gray-500">Over 2.5M engineers use Sourcegraph</p>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="flex items-center pb-16 md:pb-28">
+                            <div class="FMT__container h-full w-full overflow-hidden">
+                                <div class="FMT__container__contents inline-block flex items-center justify-center align-middle">
+                                    <div id="_0">
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-0" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_1">
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-1" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_2">
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-2" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_3">
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-3" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_4">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-4" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_5">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-5" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_6">
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-6" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_7">
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-7" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_8">
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-8" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_9">
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-9" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_10">
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-10" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_11">
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-11" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_12">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-12" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_13">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-13" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_14">
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-14" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_15">
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-15" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_16">
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-16" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_17">
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-17" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_18">
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-18" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_19">
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-19" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_20">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-20" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_21">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-21" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_22">
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-22" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_23">
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-23" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_24">
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-24" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_25">
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-25" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_26">
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-26" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_27">
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-27" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_28">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-28" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_29">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-29" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_30">
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-30" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_31">
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-31" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_32">
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-32" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_33">
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-33" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_34">
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-34" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_35">
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-35" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_36">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-36" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_37">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-37" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_38">
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-38" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_39">
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-39" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_40">
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-40" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_41">
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-41" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_42">
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-42" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_43">
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-43" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_44">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-44" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_45">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-45" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_46">
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-46" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_47">
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-47" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_48">
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-48" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_49">
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-49" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_50">
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-50" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_51">
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-51" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_52">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-52" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_53">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-53" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_54">
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-54" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_55">
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-55" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_56">
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-56" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_57">
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-57" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_58">
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-58" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_59">
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-59" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_60">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-60" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_61">
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-61" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_62">
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-62" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div id="_63">
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-63" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-0" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-1" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-2" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-3" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-4" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-5" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-6" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-7" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-8" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-9" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-10" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-11" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-12" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-13" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-14" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-15" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-16" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-17" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-18" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-19" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-20" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-21" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-22" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-23" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-24" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-25" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-26" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-27" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-28" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-29" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-30" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-31" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-32" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-33" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-34" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-35" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-36" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-37" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-38" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-39" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-40" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-41" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-42" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-43" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-44" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-45" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-46" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-47" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-48" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-49" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-50" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-51" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-52" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-53" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-54" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-55" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[190px] h-[37px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/1password-logo.svg" alt="slide-56" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[120px] h-[41.311px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/reddit-logo.svg" alt="slide-57" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[139px] h-[30px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/databricks-logo.svg" alt="slide-58" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[164px] h-[35px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/podium-logo.svg" alt="slide-59" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.756px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/qualtrics-logo.svg" alt="slide-60" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[124px] h-[39.774px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/canva-logo.svg" alt="slide-61" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[136px] h-[36.082px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/redfin-logo.svg" alt="slide-62" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="flex items-center justify-center w-[201px] h-[24.446px] mx-6">
+                                            <a href="/case-studies">
+                                                <img src="/home/carousel/nutanix-logo.svg" alt="slide-63" class="h-auto w-full"/>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mx-auto flex flex-col md:max-w-screen-xl md:px-6">
+                            <div class="flex max-w-[769px] flex-col px-6 pb-14 md:px-0">
+                                <div class="flex items-center gap-4 pb-6">
+                                    <img class="h-[50px] w-[50px] rounded-t-2xl" src="/home/branded-icons/cody-squircle.svg" alt="Cody Product logo"/>
+                                    <h1>Cody</h1>
+                                </div>
+                                <h3 class="text-gray-500">Ship code faster with Cody, the AI coding assistant. Cody uses advanced search and codebase context to help you write and fix code.</h3>
+                            </div>
+                            <div class="pb-8">
+                                <div class="">
+                                    <img class="w-full" src="/home/mobile-cody-homepage-illustration.svg" alt="Cody Product logo"/>
+                                </div>
+                            </div>
+                            <div class="relative mx-6 mb-8 flex h-auto gap-[19px] overflow-hidden rounded-2xl border-1 border-gray-200 bg-white md:mx-0 md:max-h-[500px] lg:h-[329px]">
+                                <div class="text-pretty flex w-full flex-col py-16 pl-10">
+                                    <img class="h-[40px] w-[40px]" src="/home/branded-icons/completions-brand-icon.svg" alt="Completions Brand Icon"/>
+                                    <h2 class="break-words pb-4 pt-6">Faster coding with autocomplete</h2>
+                                    <h5 class="text-gray-500">Suggestions for single lines or whole functions, in any programming language, configuration file, or docs.</h5>
+                                </div>
+                            </div>
+                            <div class="mx-6 mb-8 grid grid-cols-1 gap-8 md:mx-0 md:grid-cols-2 md:gap-6">
+                                <div class="flex flex-col rounded-2xl border-1 border-gray-200 bg-white px-10 py-16">
+                                    <svg height="0" width="0" xmlns="http://www.w3.org/2000/svg">
+                                        <defs>
+                                            <linearGradient id="grad1" x1="0%" x2="100%" y1="0%" y2="100%">
+                                                <stop offset="0.12104" stop-color="#7048E8"></stop>
+                                                <stop offset="0.308435" stop-color="#00CBEC"></stop>
+                                                <stop offset="0.642062" stop-color="#A112FF"></stop>
+                                                <stop offset="0.919599" stop-color="#FF5543"></stop>
+                                            </linearGradient>
+                                        </defs>
+                                    </svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="url(#grad1)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide">
+                                        <svg viewBox="0 0 32 32"></svg>
+                                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                                    </svg>
+                                    <h2 class="pb-4 pt-6">Get help with context-aware chat</h2>
+                                    <h5 class="mb-0 text-gray-500">Query like a human and learn about your code, or get help with tricky problems.</h5>
+                                </div>
+                                <div class="flex flex-col rounded-2xl border-1 border-gray-200 bg-white px-10 py-16">
+                                    <img class="h-[40px] w-[40px]" src="/home/branded-icons/commands-brand-icon.svg" alt="Completions Brand Icon"/>
+                                    <h2 class="pb-4 pt-6">Automate workflows with commands</h2>
+                                    <h5 class="mb-0 text-gray-500">Build and personalize commands that automate common tasks. Explain code or generate unit tests in seconds.</h5>
+                                </div>
+                            </div>
+                            <a title="Cody" class="btn btn-link btn-link-icon mx-6 mb-16 p-0 px-5 py-3 text-center font-semibold !-tracking-[0.25px] md:mx-0 md:mb-28 md:px-0 md:pb-0 md:pt-0 md:text-left" href="https://sourcegraph.com/cody">
+                                Learn more about Cody
+                                <svg class="mdi-icon link-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path>
+                                </svg>
+                            </a>
+                            <div class="relative overflow-hidden md:overflow-visible">
+                                <div class="sg-reviews mb-28 rounded-none px-6 py-24 md:mb-24 md:rounded-2xl md:px-20">
+                                    <div class="grid grid-cols-1 gap-[30px] md:grid-cols-2">
+                                        <div class="flex flex-col rounded-[10px] border-1 border-gray-200 bg-white gap-4 p-5">
+                                            <div class="flex">
+                                                <img class="mr-[10px] h-[40px] w-[40px] undefined" src="/home/reviews1.svg" alt="Completions Brand Icon"/>
+                                                <div class="flex flex-col">
+                                                    <p class="mb-0 text-base tracking-tight text-violet-500">Vito Baggiolini</p>
+                                                    <p class="mb-0 text-sm text-gray-500">Senior Software Engineer, CERN</p>
+                                                </div>
+                                            </div>
+                                            <p class="mb-0 text-lg !-tracking-[0.25px] text-gray-700">Sourcegraph is extremely valuable for what we do. It enables us to easily clean up deprecated APIs and estimate the risks and costs of our API &#x27;s evolution.</p>
+                                        </div>
+                                        <div class="flex flex-col rounded-[10px] border-1 border-gray-200 bg-white gap-4 p-5">
+                                            <div class="flex">
+                                                <img class="mr-[10px] h-[40px] w-[40px] undefined" src="/home/reviews2.png" alt="Completions Brand Icon"/>
+                                                <div class="flex flex-col">
+                                                    <p class="mb-0 text-base tracking-tight text-violet-500">Bryce Kalow</p>
+                                                    <p class="mb-0 text-sm text-gray-500">Senior Web Engineer, HashiCorp</p>
+                                                </div>
+                                            </div>
+                                            <p class="mb-0 text-lg !-tracking-[0.25px] text-gray-700">By its nature and capabilities, Sourcegraph can be a tool to reduce friction, speed up feedback loops, and improve developer velocity.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="z-10 mx-6 mb-14 flex flex-col md:mx-0 md:w-[762px]">
+                                    <div class="flex items-center gap-4 pb-6">
+                                        <img class="h-[50px] w-[50px] rounded-t-2xl" src="/home/branded-icons/Code-Search-squircle.svg" alt="Cody Product logo"/>
+                                        <h1>Code Search</h1>
+                                    </div>
+                                    <h3 class="text-gray-500">Search your entire codebase—every code host and repository, at any scale—in a single place. Code Search makes it easy for developers to onboard to new codebases, understand code faster, and find &amp;fix security risks.</h3>
+                                </div>
+                                <div class="flex pb-8">
+                                    <img class="z-20 ml-6 mr-0 h-[279px] w-[826px]" src="/home/code-search-mobile.svg" alt="Cody Search"/>
+                                    <div class="code-search-gradient absolute right-[-700px] top-[600px] z-10 h-[1245.828px] w-full "></div>
+                                </div>
+                            </div>
+                            <div class="gap-19 z-10 mx-6 mb-8 flex justify-between rounded-2xl border-1 border-gray-200 bg-white md:mx-0">
+                                <div class=" flex max-w-[590px] flex-col py-16 pl-10 pr-[70px]">
+                                    <img class="h-[32px] w-[30.316px]" src="/home/branded-icons/code-search-icon.svg" alt="Completions Brand Icon"/>
+                                    <h2 class="pb-4 pt-6">Find and fix code</h2>
+                                    <h5 class="text-gray-500">Find what you need in milliseconds across all of your code–no matter where it lives.</h5>
+                                </div>
+                            </div>
+                            <div class="mx-6 mb-8 flex flex-col gap-8 md:mx-0 md:flex-row md:gap-6">
+                                <div class="flex w-full flex-col rounded-2xl border-1 border-gray-200 bg-white px-10 py-16">
+                                    <img class="h-[40px] w-[40px]" src="/home/branded-icons/Code-insights-icon.svg" alt="Completions Brand Icon"/>
+                                    <h2 class="break-words pb-4 pt-6">Track trends in your codebase</h2>
+                                    <h5 class="text-gray-500">Transform your code into a queryable database to create custom dashboards in seconds.</h5>
+                                </div>
+                                <div class="flex w-full flex-col rounded-2xl border-1 border-gray-200 bg-white px-10 py-16">
+                                    <img class="h-[40px] w-[40px]" src="/home/branded-icons/batch-changes-icon.svg" alt="Completions Brand Icon"/>
+                                    <h2 class="pb-4 pt-6">Automate large-scale code changes</h2>
+                                    <h3 class="text-lg text-gray-500">Find and make changes across your codebase in one go, whether a version change or a vulnerability fix.</h3>
+                                </div>
+                            </div>
+                            <a title="Code Search" class="btn btn-link btn-link-icon mx-6 mb-28 p-0 px-5 py-3 text-center font-semibold !-tracking-[0.25px] md:mx-0 md:mb-24 md:px-0 md:pb-0 md:pt-0 md:text-left" href="https://sourcegraph.com/code-search">
+                                Learn more about Code Search
+                                <svg class="mdi-icon link-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path>
+                                </svg>
+                            </a>
+                            <div class="sg-reviews flex flex-col gap-6 rounded-none px-6 py-[73px] text-white md:flex-row md:gap-16 md:rounded-2xl md:px-20 md:py-16">
+                                <div class="flex flex-col gap-4 p-5 md:p-0">
+                                    <div class="flex flex-col">
+                                        <p class="mb-0 text-base">Aneesh Agrawal</p>
+                                        <p class="mb-0 text-sm">Software Engineer, Lyft</p>
+                                    </div>
+                                    <p class="mb-0 pb-4 text-[35px] font-normal leading-[43.75px] md:pb-0">Sourcegraph makes it easy to survey and understand existing use cases to make sure we build the right thing.</p>
+                                </div>
+                                <div class="flex whitespace-nowrap px-10 md:self-end md:px-0">
+                                    <a title="Case study" class="btn btn-link-dark btn-link-icon p-0" href="https://sourcegraph.com/case-studies/lyft-monolith-to-microservices">
+                                        Read the case study
+                                        <svg class="mdi-icon link-icon" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mx-6 grid grid-cols-1 gap-6 py-16 md:mx-0 md:grid-cols-2 md:py-24">
+                                <div class="hover:cta-free-cody relative overflow-hidden rounded-2xl border-1 border-gray-200 bg-white">
+                                    <div class="cta-top-border absolute left-0 right-0 top-0 rounded-t-2xl"></div>
+                                    <div class=" px-14 py-16">
+                                        <h2 class="mb-4 text-gray-700">Get started with Cody</h2>
+                                        <p class="mb-0 text-lg text-gray-500">Use Cody for free in your IDE, no credit card required.</p>
+                                        <div class="mt-6 flex flex-wrap gap-2">
+                                            <button type="button" class="btn btn-primary w-full md:w-auto" title="free cody">Get Cody for free</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="cta-home rounded-2xl px-14 py-16 text-white">
+                                    <h2 class="mb-[10px]">Cody Enterprise</h2>
+                                    <p class="mb-0 text-lg text-[#FFFFFFCC]">Cody Enterprise provides additional security, scalability, and control for your organization. Unlimited usage and context search for your entire codebase.</p>
+                                    <div class="mt-8 flex flex-col items-center gap-4 md:flex-row">
+                                        <a title="Get Cody for Enterprise" class="btn btn-secondary-dark w-full px-6 py-2 text-center md:w-auto" href="https://sourcegraph.com/contact/request-info">Request info</a>
+                                        <a title="See pricing" class="btn btn-link-dark w-full rounded-[5px] px-6 text-center md:w-auto" href="https://sourcegraph.com/pricing">See pricing</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <footer class="pt-16 pb-2 bg-gray-50 text-gray-800 z-10">
+                    <div class="mx-auto max-w-screen-xl px-4">
+                        <div class="mb-8 flex flex-col-reverse sm:grid sm:grid-cols-12">
+                            <div class="col-span-12 mt-12 sm:mt-0 sm:mb-6 lg:col-span-4 lg:mb-0">
+                                <a title="Sourcegraph - Universal code search" data-button-style="6" data-button-location="6" data-button-type="cta" href="/">
+                                    <img src="/sourcegraph-logo.svg" alt="Sourcegraph - Code Intelligence Platform" class="h-auto w-full max-w-[264px]" draggable="false" width="264" height="48"/>
+                                </a>
+                                <ul class="mx-0 mt-3 flex list-none">
+                                    <li class="mr-5">
+                                        <a href="https://github.com/sourcegraph" target="_blank" rel="nofollow noreferrer" aria-label="GitHub" title="GitHub" data-button-style="6" data-button-location="6" data-button-type="cta" class="mr-3 text-gray-400 hover:text-black">
+                                            <svg class="mdi-icon h-[24px] w-[24px]" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="mr-5">
+                                        <a href="https://twitter.com/sourcegraph" target="_blank" rel="nofollow noreferrer" aria-label="Twitter" title="Twitter" data-button-style="6" data-button-location="6" data-button-type="cta" class="mr-3 text-gray-400 hover:text-black">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" stroke="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide text-gray-400 hover:text-black">
+                                                <svg viewBox="0 0" fill="currentColor"></svg>
+                                                <path d="M18.2439 2.25H21.5519L14.3249 10.51L22.8269 21.75H16.1699L10.9559 14.933L4.98991 21.75H1.67991L9.40991 12.915L1.25391 2.25H8.07991L12.7929 8.481L18.2439 2.25ZM17.0829 19.77H18.9159L7.08391 4.126H5.11691L17.0829 19.77Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="mr-5">
+                                        <a href="https://discord.gg/s2qDtYGnAE" target="_blank" rel="nofollow noreferrer" aria-label="Discord" title="Discord" data-button-style="6" data-button-location="6" data-button-type="cta" class="mr-3 text-gray-400 hover:text-black">
+                                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 640 512" class="h-[24px] w-[24px]" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M524.531,69.836a1.5,1.5,0,0,0-.764-.7A485.065,485.065,0,0,0,404.081,32.03a1.816,1.816,0,0,0-1.923.91,337.461,337.461,0,0,0-14.9,30.6,447.848,447.848,0,0,0-134.426,0,309.541,309.541,0,0,0-15.135-30.6,1.89,1.89,0,0,0-1.924-.91A483.689,483.689,0,0,0,116.085,69.137a1.712,1.712,0,0,0-.788.676C39.068,183.651,18.186,294.69,28.43,404.354a2.016,2.016,0,0,0,.765,1.375A487.666,487.666,0,0,0,176.02,479.918a1.9,1.9,0,0,0,2.063-.676A348.2,348.2,0,0,0,208.12,430.4a1.86,1.86,0,0,0-1.019-2.588,321.173,321.173,0,0,1-45.868-21.853,1.885,1.885,0,0,1-.185-3.126c3.082-2.309,6.166-4.711,9.109-7.137a1.819,1.819,0,0,1,1.9-.256c96.229,43.917,200.41,43.917,295.5,0a1.812,1.812,0,0,1,1.924.233c2.944,2.426,6.027,4.851,9.132,7.16a1.884,1.884,0,0,1-.162,3.126,301.407,301.407,0,0,1-45.89,21.83,1.875,1.875,0,0,0-1,2.611,391.055,391.055,0,0,0,30.014,48.815,1.864,1.864,0,0,0,2.063.7A486.048,486.048,0,0,0,610.7,405.729a1.882,1.882,0,0,0,.765-1.352C623.729,277.594,590.933,167.465,524.531,69.836ZM222.491,337.58c-28.972,0-52.844-26.587-52.844-59.239S193.056,219.1,222.491,219.1c29.665,0,53.306,26.82,52.843,59.239C275.334,310.993,251.924,337.58,222.491,337.58Zm195.38,0c-28.971,0-52.843-26.587-52.843-59.239S388.437,219.1,417.871,219.1c29.667,0,53.307,26.82,52.844,59.239C470.715,310.993,447.538,337.58,417.871,337.58Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="mr-5">
+                                        <a href="https://www.linkedin.com/company/4803356/" target="_blank" rel="nofollow noreferrer" aria-label="LinkedIn" title="LinkedIn" data-button-style="6" data-button-location="6" data-button-type="cta" class="mr-3 text-gray-400 hover:text-black">
+                                            <svg class="mdi-icon h-[24px] w-[24px]" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                    <li class="mr-5">
+                                        <a href="https://www.youtube.com/c/Sourcegraph/featured" target="_blank" rel="nofollow noreferrer" aria-label="YouTube" title="YouTube" data-button-style="6" data-button-location="6" data-button-type="cta" class="mr-3 text-gray-400 hover:text-black">
+                                            <svg class="mdi-icon h-[24px] w-[24px]" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"></path>
+                                            </svg>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-span-12 sm:grid sm:grid-cols-12 lg:col-span-8">
+                                <div class="mb-8 sm:col-span-3 sm:mb-0">
+                                    <h5 class="mb-4">Products</h5>
+                                    <ul class="ml-0 list-none">
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Cody" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/cody">Cody</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Code Search" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/code-search">Code Search</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="OpenCtx" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="https://openctx.org/docs/clients/sourcegraph">
+                                                OpenCtx
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link h-3 w-3">
+                                                    <path d="M15 3h6v6"></path>
+                                                    <path d="M10 14 21 3"></path>
+                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mb-8 sm:col-span-3 sm:mb-0">
+                                    <h5 class="mb-4">Solutions</h5>
+                                    <ul class="ml-0 list-none">
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Enterprise" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/enterprise">Enterprise</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Batch Changes" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/batch-changes">Batch Changes</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Code Insights" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/code-insights">Code Insights</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Unit testing" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/solutions/build-unit-tests">Unit testing</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mb-8 sm:col-span-3 sm:mb-0">
+                                    <h5 class="mb-4">Resources</h5>
+                                    <ul class="ml-0 list-none">
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Documentation" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="https://docs.sourcegraph.com">Documentation</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Resource library" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/resources">Resource library</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Blog" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/blog">Blog</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Changelog" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="https://sourcegraph.com/github.com/sourcegraph/sourcegraph/-/blob/CHANGELOG.md">Changelog</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Community" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/community">Community</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Cody comparisons" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/compare">Cody comparisons</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Customer stories" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/case-studies">Customer stories</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Search public code" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/search">
+                                                Search public code
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link h-3 w-3">
+                                                    <path d="M15 3h6v6"></path>
+                                                    <path d="M10 14 21 3"></path>
+                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Support forum" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="https://community.sourcegraph.com">
+                                                Support forum
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link h-3 w-3">
+                                                    <path d="M15 3h6v6"></path>
+                                                    <path d="M10 14 21 3"></path>
+                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Sourcegraph Labs" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="https://s0.dev">
+                                                Sourcegraph Labs
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link h-3 w-3">
+                                                    <path d="M15 3h6v6"></path>
+                                                    <path d="M10 14 21 3"></path>
+                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="mb-8 sm:col-span-3 sm:mb-0">
+                                    <h5 class="mb-4">Company</h5>
+                                    <ul class="ml-0 list-none">
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Pricing" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/pricing">Pricing</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="About" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/about">About</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Careers - We&#x27;re hiring!" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/jobs">Careers - We &#x27;re hiring!</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Contact" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="/contact">Contact</a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Handbook" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="https://handbook.sourcegraph.com">
+                                                Handbook
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link h-3 w-3">
+                                                    <path d="M15 3h6v6"></path>
+                                                    <path d="M10 14 21 3"></path>
+                                                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li class="mb-4 max-w-[176px]">
+                                            <a title="Sourcegraph strategy" data-button-style="6" data-button-location="6" data-button-type="cta" class="flex items-center  gap-2 text-sm font-normal text-gray-500 hover:text-black" href="https://handbook.sourcegraph.com/company/strategy">Sourcegraph strategy</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-sm pt-6 pb-2">
+                            <ul class="ml-0 list-none">
+                                <li class="mr-10 sm:inline text-gray-500">© 
+                                <!-- -->
+                                2024
+                                <!-- -->
+                                Sourcegraph, Inc.</li>
+                                <li class="mt-2 inline-block sm:mt-0">
+                                    <a class="mr-5 p-0 text-gray-500" title="Terms" data-button-style="6" data-button-location="6" data-button-type="cta" href="/terms">Terms</a>
+                                </li>
+                                <li class="mt-2 inline-block sm:mt-0">
+                                    <a class="mr-5 p-0 text-gray-500" title="Security" data-button-style="6" data-button-location="6" data-button-type="cta" href="/security">Security</a>
+                                </li>
+                                <li class="mt-2 inline-block sm:mt-0">
+                                    <a class="mr-5 p-0 text-gray-500" title="Privacy" data-button-style="6" data-button-location="6" data-button-type="cta" href="/terms/privacy">Privacy</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script id="__NEXT_DATA__" type="application/json">
+            {
+                "props": {
+                    "pageProps": {
+                    }
+                },
+                "page": "/",
+                "query": {
+                },
+                "buildId": "pM19cs1Ch8awf6CR1qCvX",
+                "nextExport": true,
+                "autoExport": true,
+                "isFallback": false,
+                "scriptLoader": [
+                    {
+                        "id": "script-gtm-data-layer",
+                        "data-cookieconsent": "ignore",
+                        "strategy": "afterInteractive",
+                        "children": "\n                        window.dataLayer = window.dataLayer || [];\n                        \n                        function gtag() {\n                            dataLayer.push(arguments);\n                        }\n                        \n                        gtag(\"consent\", \"default\", {\n                            ad_storage: \"denied\",\n                            analytics_storage: \"denied\",\n                            wait_for_update: 500,\n                        });\n                        \n                        gtag(\"set\", \"ads_data_redaction\", true);\n                        \n                        gtag('js', new Date());\n                        gtag('config', 'UA-40540747-17');\n                    "
+                    },
+                    {
+                        "id": "script-gtm",
+                        "data-cookieconsent": "ignore",
+                        "strategy": "afterInteractive",
+                        "children": "\n                            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\n                            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\n                            j=d.createElement(s),dl=l!='dataLayer'?'\u0026l='+l:'';j.async=true;j.src=\n                            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\n                            })(window,document,'script','dataLayer','GTM-TB4NLS7');  \n                        "
+                    },
+                    {
+                        "id": "stack-adapt-pixel",
+                        "data-cookieconsent": "ignore",
+                        "strategy": "afterInteractive",
+                        "children": "\n                            !function(s,a,e,v,n,t,z){if(s.saq)return;n=s.saq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};\n                            if(!s._saq)s._saq=n;n.push=n;n.loaded=!0;n.version='1.0';n.queue=[];t=a.createElement(e);\n                            t.async=!0;t.src=v;z=a.getElementsByTagName(e)[0];z.parentNode.insertBefore(t,z)}(window,document,'script','https://tags.srv.stackadapt.com/events.js');\n                            saq('ts', 'RhgJyv1POYn3YCYB1MQ6Gw');\n                        "
+                    },
+                    {
+                        "id": "script-triblio-analytics",
+                        "type": "text/javascript",
+                        "src": "https://tribl.io/footer.js?orgId=Yee6bMKj7QSARqAePdE8",
+                        "strategy": "afterInteractive",
+                        "defer": true
+                    }
+                ]
+            }</script>
+    </body>
+</html>
