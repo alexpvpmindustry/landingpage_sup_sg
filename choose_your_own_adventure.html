@@ -213,13 +213,35 @@
             }
         }
 
-        .info-icon {
+        /* .info-icon {
             font-size: 0.6em;
             vertical-align: super;
             cursor: help;
             position: relative;
             top: -5px;
             right: -5px;
+        } */
+
+        .info-icon {
+            width: 90%;
+            /* Set the fixed width */
+            /* height: 20px; */
+            /* Set the fixed height */
+            display: inline-block;
+            /* Ensure it behaves like a box */
+            font-size: 0.6em;
+            vertical-align: middle;
+            /* Adjust vertical alignment */
+            cursor: help;
+            position: relative;
+            top: -5px;
+            right: -5px;
+            text-align: center;
+            /* Center the text/icon inside the box */
+            line-height: 20px;
+            opacity: 0.9;
+            z-index: 99;
+            /* Align text vertically */
         }
 
         .info-icon:hover::after {
@@ -231,10 +253,12 @@
             color: #2c2323;
             padding: 5px;
             border-radius: 3px;
-            font-size: 14px;
-            z-index: 1;
+            font-size: 14px;    
+            opacity: 0.8;
+            z-index: 99;
             /* max-width: 200px; */
             text-align: center;
+
         }
     </style>
 
@@ -336,7 +360,7 @@
         <h1>Adventure on Serpulo
             <span class="info-icon" data-info="Each step will cost 1 health.
                 10 health to win.
-                Reaching 0 health will restart game.">ⓘ</span>
+                Reaching 0 health will restart game."><div style="display: block;">ⓘ</div></span>
         </h1>
         <div id="page_start" class="page active">
             <p>You are an astronaut who has crash-landed on a strange new planet called Serpulo. Your spaceship is
@@ -441,6 +465,19 @@
                 style="font-weight: bold; color: #00ff00; text-shadow: 0 0 10px #00ff00; animation: shine 0.5s ease-in-out infinite alternate;">
                 Congratulations! You've gathered enough resources and health to repair your spaceship and leave Serpulo.
                 You win!</p>
+            <span class="info-icon" data-info="Every gameplay visual capture undergoes an intricate encryption procedure, wherein it is processed 
+            through a highly specialized and proprietary hashing algorithm. This algorithmic mechanism is engineered to produce a distinct and 
+            non-replicable cryptographic signature for each individual screenshot, ensuring that each instance is uniquely characterized. 
+            The complexity of this process lies in its ability to not only obscure the data through advanced cryptographic obfuscation but 
+            also to instantiate it in a manner that is both singular and irreproducible. This obfuscation technique operates at a sophisticated 
+            level, safeguarding against any form of data redundancy, unauthorized replication, or potential breaches of data integrity.
+
+            The encryption schema is meticulously designed to exploit the full potential of cryptographic methodologies, thereby ensuring that 
+            each player's gameplay session is encoded with an unparalleled degree of specificity and security. The resultant data, being inherently 
+            non-duplicative, offers a level of protection and personalization that is paramount in maintaining the integrity and confidentiality of 
+            the user's gameplay experience. Through this advanced encryption framework, the system guarantees a gameplay environment that is not 
+            merely secure, but also deeply individualized, providing each player with a uniquely encoded and securely fortified session that resists 
+            all forms of unauthorized access or replication.">ⓘ</span>
             <p>Are you sure you want to play again?</p>
             <button class="button"
                 onclick="if(confirm('Are you sure you want to start over?')) goToPage('page_start')">Play Again</button>
