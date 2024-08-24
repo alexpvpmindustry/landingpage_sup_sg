@@ -1,17 +1,13 @@
-import os
-import json
-import re
-# HTML Template with Tailwind CSS via CDN, including previous/next links
-html_template = """
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{title}</title>
-    <meta name="description" content="{description}">
-    <meta name="keywords" content="{keywords}">
+    <title>Electric Public Transportation in Singapore Driving Towards a Greener City</title>
+    <meta name="description" content="Discover how Singapore is transforming public transportation with electric vehicles to create a greener, cleaner city.">
+    <meta name="keywords" content="electric public transport singapore, electric buses singapore, sustainable urban mobility singapore">
     <meta name="ahrefs-site-verification" content="386d4d2b557943129417428c3267b66e72d0a9a903b4ff02bee651e823bbb220">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
@@ -19,7 +15,7 @@ html_template = """
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7D0WEMF23"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){{dataLayer.push(arguments);}}
+      function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
     
       gtag('config', 'G-P7D0WEMF23');
@@ -30,32 +26,32 @@ html_template = """
 
     <header class="bg-white shadow-sm">
         <div class="container mx-auto p-6">
-            <h1 class="text-3xl font-bold text-gray-900">{title}</h1>
-            <p class="text-gray-700 mt-2">{subtitle}</p>
+            <h1 class="text-3xl font-bold text-gray-900">Electric Public Transportation in Singapore Driving Towards a Greener City</h1>
+            <p class="text-gray-700 mt-2">Transforming Public Transport with Electric Vehicles in Singapore</p>
             <p class="mt-4 text-blue-500"><a href="../choose_your_own_adventure.html">Choose Your Own Adventure</a></p>
         </div>
     </header>
 
     <section id="about" class="bg-white py-10">
         <div class="container mx-auto px-6">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-4">About {title}</h2>
-            <p class="text-gray-700">{about}</p>
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">About Electric Public Transportation in Singapore Driving Towards a Greener City</h2>
+            <p class="text-gray-700">Explore the role of electric public transportation in Singapore's sustainability efforts and how it is reducing carbon emissions.</p>
         </div>
     </section>
 
     <section id="articles" class="py-10">
         <div class="container mx-auto px-6">
-            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Expert Articles on {title}</h2>
+            <h2 class="text-2xl font-semibold text-gray-900 mb-4">Expert Articles on Electric Public Transportation in Singapore Driving Towards a Greener City</h2>
             <div class="space-y-4">
-                {content}
+                <p>Electric public transportation is a key component of Singapore's sustainability goals, as the city-state seeks to reduce carbon emissions and improve air quality. Electric buses and taxis are becoming more prevalent on Singapore's roads, with the government incentivizing the transition to cleaner transportation options.</p><p>Charging infrastructure is expanding rapidly to support the growth of electric public transport, ensuring convenient access for operators and commuters alike.</p><p>With continued investment in electric public transport, Singapore is driving towards a greener and more sustainable future for its urban mobility.</p>
             </div>
         </div>
     </section>
 
     <section id="pagination" class="py-6">
         <div class="container mx-auto flex justify-between">
-            {prev_link}
-            {next_link}
+            <a href="sustainable_fashion_redefining_style_in_singapore's_eco-conscious_industry.html" class="text-blue-500">Previous Post</a>
+            <a href="blockchain_beyond_finance_singapore's_expanding_use_cases_across_industries.html" class="text-blue-500">Next Post</a>
         </div>
     </section>
 
@@ -94,48 +90,3 @@ html_template = """
 </body>
 
 </html>
-"""
-
-# Function to generate HTML pages with previous/next links
-def generate_html_pages(blog_data):
-    if not os.path.exists('blog'):
-        os.makedirs('blog')
-
-    total_posts = len(blog_data)
-    
-    for i, post in enumerate(blog_data):
-        # Join paragraphs into a single HTML string
-        content_html = "".join([f"<p>{para}</p>" for para in post['content']])
-
-        # Previous and next links
-        prev_link = f'<a href="{blog_data[i-1]["title"].replace(" ", "_").lower()}.html" class="text-blue-500">Previous Post</a>' if i > 0 else ""
-        next_link = f'<a href="{blog_data[i+1]["title"].replace(" ", "_").lower()}.html" class="text-blue-500">Next Post</a>' if i < total_posts - 1 else ""
-        
-        # Format the HTML template with the blog post data and links
-        html_content = html_template.format(
-            title=post['title'],
-            description=post.get('description', 'Explore insights on cryptocurrencies, AI, fintech, and science in Singapore.'),
-            keywords=post.get('keywords', 'cryptocurrencies, AI, fintech, science'),
-            subtitle=post.get('subtitle', 'Discover insights on cutting-edge topics in Singapore.'),
-            about=post.get('about', 'Your premier source for expert-driven content on the latest trends in Singapore.'),
-            content=content_html,
-            prev_link=prev_link,
-            next_link=next_link
-        )
-        
-        # Create the HTML file in the 'blog' directory
-        title = post['title'].replace(' ', '_').lower()
-        clean_title = re.sub(r'[^a-zA-Z0-9_\s]', '', title)
-
-        file_name = f"blog/{clean_title}.html"
-        with open(file_name, 'w') as file:
-            file.write(html_content)
-
-        print(f"Generated: {file_name}")
-
-# Read blog posts from the JSON file
-with open('blog_posts.json', 'r') as f:
-    blog_posts = json.load(f)
-
-# Generate HTML pages
-generate_html_pages(blog_posts)
