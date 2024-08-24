@@ -109,10 +109,23 @@ def generate_html_pages(blog_data):
     for i, post in enumerate(blog_data):
         # Join paragraphs into a single HTML string
         content_html = "".join([f"<p>{para}</p>" for para in post['content']])
-
-        # Previous and next links
-        prev_link = f'<a href="{blog_data[i-1]["title"].replace(" ", "_").lower()}.html" class="text-blue-500">Previous Post</a>' if i > 0 else ""
-        next_link = f'<a href="{blog_data[i+1]["title"].replace(" ", "_").lower()}.html" class="text-blue-500">Next Post</a>' if i < total_posts - 1 else ""
+        prev_link=""
+        next_link=""
+        if i > 0:
+            # Create a filename from the title, preserving underscores
+            title = blog_data[i-1]["title"].replace(' ', '_').lower()
+            clean_title = re.sub(r'[^a-zA-Z0-9_\s]', '', title)
+            # Create the link to the post
+            prev_link = f"{clean_title}.html"
+        if i < total_posts - 1 :
+            # Create a filename from the title, preserving underscores
+            title = blog_data[i+1]["title"].replace(' ', '_').lower()
+            clean_title = re.sub(r'[^a-zA-Z0-9_\s]', '', title)
+            # Create the link to the post
+            next_link = f"{clean_title}.html"
+        # # Previous and next links
+        # prev_link = f'<a href="{blog_data[i-1]["title"].replace(" ", "_").lower()}.html" class="text-blue-500">Previous Post</a>' if i > 0 else ""
+        # next_link = f'<a href="{blog_data[i+1]["title"].replace(" ", "_").lower()}.html" class="text-blue-500">Next Post</a>' if i < total_posts - 1 else ""
         
         # Format the HTML template with the blog post data and links
         html_content = html_template.format(
