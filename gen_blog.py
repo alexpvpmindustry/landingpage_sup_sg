@@ -1,6 +1,6 @@
 import os
 import json
-
+import re
 # HTML Template with Tailwind CSS via CDN, including previous/next links
 html_template = """
 <!DOCTYPE html>
@@ -122,9 +122,11 @@ def generate_html_pages(blog_data):
             prev_link=prev_link,
             next_link=next_link
         )
+        title = post['title'].replace(' ', '_').lower()
+        clean_title = re.sub(r'[^a-zA-Z0-9\s]', '', title)
 
         # Create the HTML file in the 'blog' directory
-        file_name = f"blog/{post['title'].replace(' ', '_').lower()}.html"
+        file_name = f"blog/{clean_title}.html"
         with open(file_name, 'w') as file:
             file.write(html_content)
 
