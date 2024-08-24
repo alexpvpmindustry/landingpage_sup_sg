@@ -14,6 +14,13 @@ index_content = """<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Index</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){{dataLayer.push(arguments);}}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-P7D0WEMF23');
+    </script>
 </head>
 <body class="bg-gray-50 text-gray-800 font-roboto">
     <header class="bg-blue-600 text-white py-8 text-center">
@@ -34,7 +41,7 @@ for post in blog_posts:
     # Create a filename from the title, preserving underscores
     title = post['title'].replace(' ', '_').lower()
     clean_title = re.sub(r'[^a-zA-Z0-9_\s]', '', title)
-    
+
     # Create the link to the post
     file_name = f"{clean_title}.html"
     index_content += f'            <li><a href="{file_name}" class="text-blue-600 hover:underline">{post["title"]}</a></li>\n'

@@ -10,8 +10,8 @@ def generate_url_block(file_name, lastmod):
     <url>
         <loc>{base_url}/{file_name}</loc>
         <lastmod>{lastmod}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
     </url>
     """
 
@@ -28,6 +28,10 @@ for file_name in os.listdir():
     if file_name.endswith(".html"):
         # Generate the URL block and append it to the sitemap content
         sitemap_content += generate_url_block(file_name, current_date)
+for file_name in os.listdir("blog/"):
+    if file_name.endswith(".html"):
+        # Generate the URL block and append it to the sitemap content
+        sitemap_content += generate_url_block("blog/"+file_name, current_date)
 
 # End of the XML sitemap
 sitemap_content += """
