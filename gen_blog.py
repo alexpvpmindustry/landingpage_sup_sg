@@ -124,8 +124,8 @@ def generate_html_pages(blog_data):
             # Create the link to the post
             next_link = f"{clean_title}.html"
         # # Previous and next links
-        # prev_link = f'<a href="{blog_data[i-1]["title"].replace(" ", "_").lower()}.html" class="text-blue-500">Previous Post</a>' if i > 0 else ""
-        # next_link = f'<a href="{blog_data[i+1]["title"].replace(" ", "_").lower()}.html" class="text-blue-500">Next Post</a>' if i < total_posts - 1 else ""
+        prev_link = f'<a href="{prev_link}" class="text-blue-500">Previous Post</a>' if i > 0 else ""
+        next_link = f'<a href="{next_link}" class="text-blue-500">Next Post</a>' if i < total_posts - 1 else ""
         
         # Format the HTML template with the blog post data and links
         html_content = html_template.format(
