@@ -33,4 +33,4 @@ Disallow:
 User-agent: *
 Disallow: 
 Disallow: /cgi-bin/
-Sitemap: https://sup.sg/sitemap.html
+Sitemap: https://sup.sg/sitemap.xml
