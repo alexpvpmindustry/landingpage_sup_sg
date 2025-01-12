@@ -52,7 +52,7 @@ index_content += """        </ul>
 
         <footer class="bg-gray-900 text-white py-6">
         <div class="container">
-        <p>&copy; 2024 sup.sg.  All rights reserved.</p>
+        <p>&copy; 2025 sup.sg.  All rights reserved.</p>
             <ul class="flex justify-center space-x-4">
                 <li><a href="#" class="text-gray-400">Privacy Policy</a></li>
                 <li><a href="#" class="text-gray-400">Terms of Service</a></li>
