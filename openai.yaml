@@ -1,0 +1,107 @@
+openapi: 3.0.3
+info:
+  title: Sitemap Generator API
+  description: API for generating XML sitemaps for websites, supporting standard and premium options.
+  version: 1.0.0
+  contact:
+    name: sup.sg
+    url: https://sup.sg
+servers:
+  - url: https://seo.sup.sg
+paths:
+  /sitemap_generator:
+    get:
+      summary: Generate a standard sitemap.xml with crawling up to 50 pages at depth 2
+      parameters:
+        - name: url
+          in: query
+          description: The target website URL to crawl. Must be a valid http/https URL.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Valid XML sitemap
+          content:
+            application/xml:
+              schema:
+                type: string
+                example: '<?xml version="1.0" encoding="UTF-8"?><urlset>...</urlset>'
+        '400':
+          description: Missing or invalid/unsafe URL
+        '429':
+          description: Rate limited. 5 requests per 5 minutes.
+        '500':
+          description: Internal server error during sitemap generation
+
+  /seo_sitemap_generator:
+    get:
+      summary: Generate a tree-like sitemap.xml with crawling up to 50 pages at depth 2
+      parameters:
+        - name: url
+          in: query
+          description: The target website URL to crawl. Must be a valid http/https URL.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Valid XML sitemap
+          content:
+            application/xml:
+              schema:
+                type: string
+        '400':
+          description: Missing or invalid/unsafe URL
+        '429':
+          description: Rate limited. 5 requests per 5 minutes.
+        '500':
+          description: Internal server error during sitemap generation
+
+  /crawl:
+    get:
+      summary: Generate a sitemap.xml by crawling up to 50 pages at depth 2
+      parameters:
+        - name: url
+          in: query
+          description: The target website URL to crawl. Must be a valid http/https URL.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Valid XML sitemap
+          content:
+            application/xml:
+              schema:
+                type: string
+        '400':
+          description: Missing or invalid/unsafe URL
+        '429':
+          description: Rate limited. 5 requests per 5 minutes.
+        '500':
+          description: Internal server error during sitemap generation
+
+  /sitemap_premium:
+    get:
+      summary: Generate a comprehensive sitemap.xml crawling up to 300 pages at depth 3
+      parameters:
+        - name: url
+          in: query
+          description: The target website URL to crawl. Must be a valid http/https URL.
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Valid XML sitemap
+          content:
+            application/xml:
+              schema:
+                type: string
+        '400':
+          description: Missing or invalid/unsafe URL
+        '429':
+          description: Rate limited. 5 requests per 1 minute.
+        '500':
+          description: Internal server error during sitemap generation
