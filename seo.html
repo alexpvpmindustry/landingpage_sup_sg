@@ -3,38 +3,556 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sitemap Generator</title>
+  <title>Free Sitemap Generator API - sup.sg/seo</title>
+  <meta name="description" content="Generate XML sitemaps instantly with our free Sitemap Generator API. Supports curl, Python, Node.js and Rust. Perfect for SEO automation and AI agents.">
+  <meta name="keywords" content="sitemap generator, sitemap API, XML sitemap, SEO tools, free sitemap, AI SEO, sitemap automation">
+  <meta property="og:title" content="Free Sitemap Generator API - sup.sg/seo">
+  <meta property="og:description" content="Generate XML sitemaps instantly. Free API with curl, Python, Node.js and Rust examples.">
+  <meta property="og:url" content="https://sup.sg/seo.html">
+  <meta property="og:type" content="website">
+  <link rel="canonical" href="https://sup.sg/seo.html">
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-P7D0WEMF23"></script>
+      <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-P7D0WEMF23');
+      </script>
+      <script src="https://analytics.ahrefs.com/analytics.js" data-key="ZDkBrWN4e8smYdfOv0ioJA" async></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f13;
+      --surface: #18181f;
+      --border: #2a2a35;
+      --accent: #7c6af7;
+      --accent2: #5eead4;
+      --text: #e4e4f0;
+      --muted: #888899;
+      --code-bg: #12121a;
+      --radius: 10px;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a { color: var(--accent2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Layout */
+    header, main, footer { max-width: 860px; margin: 0 auto; padding: 0 1.25rem; }
+
+    /* Header */
+    header {
+      padding-top: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+    }
+    header .badge {
+      display: inline-block;
+      background: rgba(124,106,247,0.15);
+      color: var(--accent);
+      border: 1px solid rgba(124,106,247,0.3);
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      padding: 0.2rem 0.75rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+    header h1 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+      background: linear-gradient(135deg, #fff 40%, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    header p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* Sections */
+    section { padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
+    section:last-of-type { border-bottom: none; }
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: #fff;
+    }
+    h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--accent2);
+      margin-bottom: 0.5rem;
+      margin-top: 1.25rem;
+    }
+    p { color: var(--muted); margin-bottom: 0.75rem; }
+
+    /* Generator card */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.75rem;
+    }
+    .input-row {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .input-row input {
+      flex: 1;
+      min-width: 200px;
+      padding: 0.65rem 0.9rem;
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 7px;
+      color: var(--text);
+      font-size: 0.95rem;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .input-row input:focus { border-color: var(--accent); }
+    .btn {
+      padding: 0.65rem 1.4rem;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 7px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: opacity 0.15s;
+      white-space: nowrap;
+    }
+    .btn:hover:not(:disabled) { opacity: 0.85; }
+    .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+    .status {
+      margin-top: 0.9rem;
+      font-size: 0.875rem;
+      color: var(--muted);
+      min-height: 1.2rem;
+    }
+    .status.error { color: #f87171; }
+    .status.success { color: var(--accent2); }
+
+    /* Tier toggle */
+    .tier-row {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .tier-btn {
+      padding: 0.35rem 1rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tier-btn.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+
+    /* Code blocks */
+    .tabs { display: flex; gap: 0.4rem; margin-bottom: 0; flex-wrap: wrap; }
+    .tab {
+      padding: 0.35rem 0.9rem;
+      border-radius: 6px 6px 0 0;
+      border: 1px solid var(--border);
+      border-bottom: none;
+      background: var(--code-bg);
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .tab.active { background: var(--surface); color: #fff; border-color: var(--border); }
+    .code-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 0 var(--radius) var(--radius) var(--radius);
+      overflow: hidden;
+    }
+    .code-panel { display: none; }
+    .code-panel.active { display: block; }
+    pre {
+      padding: 1.25rem;
+      overflow-x: auto;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      color: #c9d1d9;
+    }
+    .kw { color: #ff7b72; }
+    .str { color: #a5d6ff; }
+    .cm { color: #5a6370; font-style: italic; }
+    .fn { color: #d2a8ff; }
+    .var { color: #ffa657; }
+
+    /* API docs table */
+    .endpoint-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .endpoint-block .method {
+      display: inline-block;
+      background: rgba(94,234,212,0.1);
+      color: var(--accent2);
+      border: 1px solid rgba(94,234,212,0.25);
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.1rem 0.5rem;
+      margin-right: 0.5rem;
+      font-family: monospace;
+    }
+    .endpoint-block .method.premium {
+      background: rgba(124,106,247,0.1);
+      color: var(--accent);
+      border-color: rgba(124,106,247,0.25);
+    }
+    .endpoint-block .url {
+      font-family: monospace;
+      font-size: 0.92rem;
+      color: #fff;
+    }
+    .endpoint-block p { margin-top: 0.5rem; font-size: 0.9rem; }
+    table { width: 100%; border-collapse: collapse; margin-top: 0.75rem; font-size: 0.875rem; }
+    th { text-align: left; color: var(--muted); font-weight: 600; padding: 0.4rem 0.5rem; border-bottom: 1px solid var(--border); }
+    td { padding: 0.45rem 0.5rem; border-bottom: 1px solid var(--border); color: var(--text); vertical-align: top; }
+    td:first-child { font-family: monospace; color: var(--accent2); }
+    td.muted { color: var(--muted); }
+    tr:last-child td { border-bottom: none; }
+
+    /* Footer */
+    footer {
+      padding: 2rem 1.25rem;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    footer a { color: var(--muted); }
+
+    /* Spinner */
+    .spinner {
+      display: inline-block;
+      width: 12px; height: 12px;
+      border: 2px solid rgba(255,255,255,0.2);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+      margin-right: 6px;
+      vertical-align: middle;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
 </head>
 <body>
-  <h1>Sitemap Generator</h1>
-  <input type="text" id="urlInput" value="https://ai.dominance.sg" size="40" />
-  <button onclick="generate()">Generate &amp; Download</button>
-  <p id="status"></p>
 
-  <script>
-    async function generate() {
-      const target = document.getElementById('urlInput').value.trim();
-      const status = document.getElementById('status');
+<header>
+  <div class="badge">Free &amp; Open API</div>
+  <h1>XML Sitemap Generator</h1>
+  <p>Instantly generate an XML sitemap for any website. Free to use, developer-friendly API - built for SEO automation and AI agents.</p>
+</header>
 
-      if (!target) { status.textContent = 'Please enter a URL.'; return; }
+<main>
 
-      status.textContent = 'Crawling… this may take a moment.';
+  <!-- Generator -->
+  <section id="generator">
+    <h2>Generate Your Sitemap</h2>
+    <div class="card">
+      <div class="tier-row">
+        <button class="tier-btn active" id="tierStd" onclick="setTier('standard')">Standard (free)</button>
+        <button class="tier-btn" id="tierPrem" onclick="setTier('premium')">Premium</button>
+      </div>
+      <div class="input-row">
+        <input type="text" id="urlInput" value="https://ai.dominance.sg" placeholder="https://ai.dominance.sg" />
+        <button class="btn" id="genBtn" onclick="generate()">Generate &amp; Download</button>
+      </div>
+      <div class="status" id="status"></div>
+    </div>
+  </section>
 
-      try {
-        const res = await fetch(`https://seo.sup.sg/crawl?url=${encodeURIComponent(target)}`);
-        if (!res.ok) { status.textContent = 'Error: ' + await res.text(); return; }
+  <!-- API Demo -->
+  <section id="demo">
+    <h2>API Code Examples</h2>
+    <p>Four endpoints are available - all return the same <code>sitemap.xml</code>. Pick any name that suits your workflow.</p>
 
-        const a = document.createElement('a');
-        a.href = URL.createObjectURL(await res.blob());
-        a.download = 'sitemap.xml';
-        a.click();
-        URL.revokeObjectURL(a.href);
+    <h3 style="margin-top:0.5rem">Standard endpoints</h3>
 
-        status.textContent = 'Done! Sitemap downloaded.';
-      } catch (e) {
-        status.textContent = 'Request failed: ' + e.message;
+    <div class="tabs" id="stdTabs">
+      <div class="tab active" onclick="switchTab('std','curl')">curl</div>
+      <div class="tab" onclick="switchTab('std','python')">Python</div>
+      <div class="tab" onclick="switchTab('std','node')">Node.js</div>
+      <div class="tab" onclick="switchTab('std','rust')">Rust</div>
+    </div>
+    <div class="code-wrap">
+      <div class="code-panel active" id="std-curl"><pre><span class="cm"># Any of these endpoint names work identically:</span>
+curl <span class="str">"https://seo.sup.sg/crawl?url=https://ai.dominance.sg"</span> -o sitemap.xml
+curl <span class="str">"https://seo.sup.sg/sitemap_generator?url=https://ai.dominance.sg"</span> -o sitemap.xml
+curl <span class="str">"https://seo.sup.sg/seo_sitemap_generator?url=https://ai.dominance.sg"</span> -o sitemap.xml</pre></div>
+      <div class="code-panel" id="std-python"><pre><span class="kw">import</span> requests
+
+url = <span class="str">"https://ai.dominance.sg"</span>
+endpoints = [
+    <span class="str">"https://seo.sup.sg/crawl"</span>,
+    <span class="str">"https://seo.sup.sg/sitemap_generator"</span>,
+    <span class="str">"https://seo.sup.sg/seo_sitemap_generator"</span>,
+]
+
+<span class="cm"># Use any endpoint - they are identical</span>
+resp = requests.<span class="fn">get</span>(endpoints[<span class="var">0</span>], params={<span class="str">"url"</span>: url}, timeout=<span class="var">120</span>)
+resp.<span class="fn">raise_for_status</span>()
+
+<span class="kw">with</span> <span class="fn">open</span>(<span class="str">"sitemap.xml"</span>, <span class="str">"wb"</span>) <span class="kw">as</span> f:
+    f.<span class="fn">write</span>(resp.content)
+
+<span class="fn">print</span>(<span class="str">"Saved to sitemap.xml"</span>)</pre></div>
+      <div class="code-panel" id="std-node"><pre><span class="kw">import</span> fs <span class="kw">from</span> <span class="str">"fs"</span>;
+
+<span class="kw">const</span> <span class="var">target</span> = <span class="str">"https://ai.dominance.sg"</span>;
+<span class="kw">const</span> <span class="var">api</span> = <span class="str">`https://seo.sup.sg/crawl?url=<span class="kw">${</span><span class="fn">encodeURIComponent</span>(<span class="var">target</span>)<span class="kw">}</span>`</span>;
+
+<span class="kw">const</span> <span class="var">res</span> = <span class="kw">await</span> <span class="fn">fetch</span>(<span class="var">api</span>);
+<span class="kw">if</span> (!<span class="var">res</span>.ok) <span class="kw">throw new</span> <span class="fn">Error</span>(<span class="kw">await</span> <span class="var">res</span>.<span class="fn">text</span>());
+
+<span class="kw">const</span> <span class="var">buf</span> = <span class="fn">Buffer</span>.from(<span class="kw">await</span> <span class="var">res</span>.<span class="fn">arrayBuffer</span>());
+fs.<span class="fn">writeFileSync</span>(<span class="str">"sitemap.xml"</span>, <span class="var">buf</span>);
+<span class="fn">console</span>.<span class="fn">log</span>(<span class="str">"Saved to sitemap.xml"</span>);</pre></div>
+      <div class="code-panel" id="std-rust"><pre><span class="cm">// Cargo.toml: reqwest = { version = "0.11", features = ["blocking"] }</span>
+<span class="kw">use</span> std::fs;
+
+<span class="kw">fn</span> <span class="fn">main</span>() -> Result&lt;(), Box&lt;<span class="kw">dyn</span> std::error::Error&gt;&gt; {
+    <span class="kw">let</span> <span class="var">target</span> = <span class="str">"https://ai.dominance.sg"</span>;
+    <span class="kw">let</span> <span class="var">api</span> = <span class="fn">format!</span>(
+        <span class="str">"https://seo.sup.sg/crawl?url={}"</span>,
+        urlencoding::<span class="fn">encode</span>(<span class="var">target</span>)
+    );
+
+    <span class="kw">let</span> <span class="var">body</span> = reqwest::blocking::<span class="fn">get</span>(&<span class="var">api</span>)?.<span class="fn">bytes</span>()?;
+    fs::<span class="fn">write</span>(<span class="str">"sitemap.xml"</span>, &<span class="var">body</span>)?;
+    <span class="fn">println!</span>(<span class="str">"Saved to sitemap.xml"</span>);
+    <span class="fn">Ok</span>(())
+}</pre></div>
+    </div>
+
+    <h3>Premium endpoint</h3>
+    <div class="tabs" id="premTabs">
+      <div class="tab active" onclick="switchTab('prem','curl')">curl</div>
+      <div class="tab" onclick="switchTab('prem','python')">Python</div>
+      <div class="tab" onclick="switchTab('prem','node')">Node.js</div>
+      <div class="tab" onclick="switchTab('prem','rust')">Rust</div>
+    </div>
+    <div class="code-wrap">
+      <div class="code-panel active" id="prem-curl"><pre><span class="cm"># Deeper crawl: depth 3, up to 300 pages</span>
+curl <span class="str">"https://seo.sup.sg/sitemap_premium?url=https://ai.dominance.sg"</span> -o sitemap.xml</pre></div>
+      <div class="code-panel" id="prem-python"><pre>resp = requests.<span class="fn">get</span>(
+    <span class="str">"https://seo.sup.sg/sitemap_premium"</span>,
+    params={<span class="str">"url"</span>: <span class="str">"https://ai.dominance.sg"</span>},
+    timeout=<span class="var">180</span>
+)
+resp.<span class="fn">raise_for_status</span>()
+<span class="kw">with</span> <span class="fn">open</span>(<span class="str">"sitemap.xml"</span>, <span class="str">"wb"</span>) <span class="kw">as</span> f:
+    f.<span class="fn">write</span>(resp.content)</pre></div>
+      <div class="code-panel" id="prem-node"><pre><span class="kw">const</span> <span class="var">res</span> = <span class="kw">await</span> <span class="fn">fetch</span>(
+    <span class="str">`https://seo.sup.sg/sitemap_premium?url=<span class="kw">${</span><span class="fn">encodeURIComponent</span>(<span class="str">"https://ai.dominance.sg"</span>)<span class="kw">}</span>`</span>
+);
+<span class="kw">const</span> <span class="var">buf</span> = <span class="fn">Buffer</span>.from(<span class="kw">await</span> <span class="var">res</span>.<span class="fn">arrayBuffer</span>());
+fs.<span class="fn">writeFileSync</span>(<span class="str">"sitemap.xml"</span>, <span class="var">buf</span>);</pre></div>
+      <div class="code-panel" id="prem-rust"><pre><span class="kw">let</span> <span class="var">api</span> = <span class="fn">format!</span>(
+    <span class="str">"https://seo.sup.sg/sitemap_premium?url={}"</span>,
+    urlencoding::<span class="fn">encode</span>(<span class="str">"https://ai.dominance.sg"</span>)
+);
+<span class="kw">let</span> <span class="var">body</span> = reqwest::blocking::<span class="fn">get</span>(&<span class="var">api</span>)?.<span class="fn">bytes</span>()?;
+fs::<span class="fn">write</span>(<span class="str">"sitemap.xml"</span>, &<span class="var">body</span>)?;</pre></div>
+    </div>
+  </section>
+
+  <!-- API Documentation -->
+  <section id="docs">
+    <h2>API Documentation</h2>
+    <p>Base URL: <code>https://seo.sup.sg</code></p>
+
+    <div class="endpoint-block">
+      <div>
+        <span class="method">GET</span>
+        <span class="url">/sitemap_generator</span>
+      </div>
+      <p>Standard SEO sitemap.xml generation. Crawls up to 50 pages at depth 2.</p>
+      <table>
+        <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr>
+        <tr><td>url</td><td>string</td><td>Yes</td><td class="muted">The target website URL to crawl. Must be a valid http/https URL.</td></tr>
+      </table>
+      <table style="margin-top:0.75rem">
+        <tr><th>Response</th><th>Code</th><th>Description</th></tr>
+        <tr><td>sitemap.xml</td><td>200</td><td class="muted">Valid XML sitemap, Content-Type: application/xml</td></tr>
+        <tr><td>error message</td><td>400</td><td class="muted">Missing or invalid/unsafe URL</td></tr>
+        <tr><td>rate limited</td><td>429</td><td class="muted">5 requests per 5 minutes per IP, burst of 5</td></tr>
+        <tr><td>error message</td><td>500</td><td class="muted">Internal server error during sitemap generation</td></tr>
+      </table>
+    </div>
+
+    <div class="endpoint-block">
+      <div>
+        <span class="method">GET</span>
+        <span class="url">/seo_sitemap_generator</span>
+      </div>
+      <p>Standard tree-like sitemap.xml generation. Crawls up to 50 pages at depth 2.</p>
+      <table>
+        <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr>
+        <tr><td>url</td><td>string</td><td>Yes</td><td class="muted">The target website URL to crawl. Must be a valid http/https URL.</td></tr>
+      </table>
+      <table style="margin-top:0.75rem">
+        <tr><th>Response</th><th>Code</th><th>Description</th></tr>
+        <tr><td>sitemap.xml</td><td>200</td><td class="muted">Valid XML sitemap, Content-Type: application/xml</td></tr>
+        <tr><td>error message</td><td>400</td><td class="muted">Missing or invalid/unsafe URL</td></tr>
+        <tr><td>rate limited</td><td>429</td><td class="muted">5 requests per 5 minutes per IP, burst of 5</td></tr>
+        <tr><td>error message</td><td>500</td><td class="muted">Internal server error during sitemap generation</td></tr>
+      </table>
+    </div>
+
+    <div class="endpoint-block">
+      <div>
+        <span class="method">GET</span>
+        <span class="url">/crawl</span>
+      </div>
+      <p>Standard crawling sitemap.xml generation. Crawls up to 50 pages at depth 2.</p>
+      <table>
+        <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr>
+        <tr><td>url</td><td>string</td><td>Yes</td><td class="muted">The target website URL to crawl. Must be a valid http/https URL.</td></tr>
+      </table>
+      <table style="margin-top:0.75rem">
+        <tr><th>Response</th><th>Code</th><th>Description</th></tr>
+        <tr><td>sitemap.xml</td><td>200</td><td class="muted">Valid XML sitemap, Content-Type: application/xml</td></tr>
+        <tr><td>error message</td><td>400</td><td class="muted">Missing or invalid/unsafe URL</td></tr>
+        <tr><td>rate limited</td><td>429</td><td class="muted">5 requests per 5 minutes per IP, burst of 5</td></tr>
+        <tr><td>error message</td><td>500</td><td class="muted">Internal server error during sitemap generation</td></tr>
+      </table>
+    </div>
+
+    <div class="endpoint-block">
+      <div>
+        <span class="method premium">GET</span>
+        <span class="url">/sitemap_premium</span>
+      </div>
+      <p>Premium sitemap generation. Crawls up to 300 pages at depth 3 for a more comprehensive sitemap.</p>
+      <table>
+        <tr><th>Parameter</th><th>Type</th><th>Required</th><th>Description</th></tr>
+        <tr><td>url</td><td>string</td><td>Yes</td><td class="muted">The target website URL to crawl. Must be a valid http/https URL.</td></tr>
+      </table>
+      <table style="margin-top:0.75rem">
+        <tr><th>Response</th><th>Code</th><th>Description</th></tr>
+        <tr><td>sitemap.xml</td><td>200</td><td class="muted">Valid XML sitemap, Content-Type: application/xml</td></tr>
+        <tr><td>error message</td><td>400</td><td class="muted">Missing or invalid/unsafe URL</td></tr>
+        <tr><td>rate limited</td><td>429</td><td class="muted">5 requests per 1 minute per IP, burst of 5</td></tr>
+        <tr><td>error message</td><td>500</td><td class="muted">Internal server error during sitemap generation</td></tr>
+      </table>
+    </div>
+
+    <h3 style="margin-top:1.5rem; color: var(--muted)">Notes</h3>
+    <p>Only links within the same domain as the target URL are crawled. The generated sitemap follows the <a href="https://www.sitemaps.org/protocol.html" target="_blank">sitemaps.org protocol</a> and is compatible with Google Search Console, Bing Webmaster Tools, and all major search engines. Crawl depth and page limits are in place to ensure fair usage.</p>
+  </section>
+
+</main>
+
+<footer>
+  <p>Built by <a href="https://sup.sg" target="_blank">sup.sg</a> - the one stop solution for AI and Search Engine Optimisation.</p>
+  <p style="margin-top:0.4rem">Also visit: <a href="https://ai.dominance.sg" target="_blank">ai.dominance.sg</a> · <a href="https://dominance.sg" target="_blank">dominance.sg</a> · <a href="https://gta.sg" target="_blank">gta.sg</a></p>
+</footer>
+
+<script>
+  let currentTier = 'standard';
+
+  function setTier(tier) {
+    currentTier = tier;
+    document.getElementById('tierStd').classList.toggle('active', tier === 'standard');
+    document.getElementById('tierPrem').classList.toggle('active', tier === 'premium');
+  }
+
+  async function generate() {
+    const input = document.getElementById('urlInput');
+    const btn = document.getElementById('genBtn');
+    const status = document.getElementById('status');
+    const target = input.value.trim();
+
+    if (!target) { setStatus('Please enter a URL.', 'error'); return; }
+
+    btn.disabled = true;
+    setStatus('<span class="spinner"></span>Crawling… this may take up to a minute.', '');
+
+    const endpoint = currentTier === 'premium' ? 'sitemap_premium' : 'crawl';
+
+    try {
+      const res = await fetch(`https://seo.sup.sg/${endpoint}?url=${encodeURIComponent(target)}`);
+      if (res.status === 429) {
+        setStatus('Rate limit reached. Please wait a few minutes and try again.', 'error');
+        return;
       }
+      if (!res.ok) {
+        setStatus('Error: ' + await res.text(), 'error');
+        return;
+      }
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(await res.blob());
+      a.download = 'sitemap.xml';
+      a.click();
+      URL.revokeObjectURL(a.href);
+      setStatus('Done! Your sitemap.xml has been downloaded.', 'success');
+    } catch (e) {
+      setStatus('Request failed: ' + e.message, 'error');
+    } finally {
+      btn.disabled = false;
     }
-  </script>
+  }
+
+  function setStatus(msg, type) {
+    const el = document.getElementById('status');
+    el.innerHTML = msg;
+    el.className = 'status ' + type;
+  }
+
+  function switchTab(group, lang) {
+    const prefix = group === 'std' ? 'std' : 'prem';
+    const tabsEl = document.getElementById(prefix + 'Tabs');
+
+    tabsEl.querySelectorAll('.tab').forEach((t, i) => {
+      const langs = ['curl', 'python', 'node', 'rust'];
+      t.classList.toggle('active', langs[i] === lang);
+    });
+
+    ['curl', 'python', 'node', 'rust'].forEach(l => {
+      const el = document.getElementById(`${prefix}-${l}`);
+      if (el) el.classList.toggle('active', l === lang);
+    });
+  }
+
+  document.getElementById('urlInput').addEventListener('keydown', e => {
+    if (e.key === 'Enter') generate();
+  });
+</script>
+
 </body>
 </html>
