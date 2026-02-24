@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitemap Generator</title>
+</head>
+<body>
+  <h1>Sitemap Generator</h1>
+  <input type="text" id="urlInput" value="https://ai.dominance.sg" size="40" />
+  <button onclick="generate()">Generate &amp; Download</button>
+  <p id="status"></p>
+
+  <script>
+    async function generate() {
+      const target = document.getElementById('urlInput').value.trim();
+      const status = document.getElementById('status');
+
+      if (!target) { status.textContent = 'Please enter a URL.'; return; }
+
+      status.textContent = 'Crawling… this may take a moment.';
+
+      try {
+        const res = await fetch(`https://seo.sup.sg/crawl?url=${encodeURIComponent(target)}`);
+        if (!res.ok) { status.textContent = 'Error: ' + await res.text(); return; }
+
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(await res.blob());
+        a.download = 'sitemap.xml';
+        a.click();
+        URL.revokeObjectURL(a.href);
+
+        status.textContent = 'Done! Sitemap downloaded.';
+      } catch (e) {
+        status.textContent = 'Request failed: ' + e.message;
+      }
+    }
+  </script>
+</body>
+</html>
